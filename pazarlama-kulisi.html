@@ -179,7 +179,8 @@ input,select,textarea{font-family:inherit}
 <nav aria-label="Ana menü" class="d" style="display: flex; flex-wrap: wrap; gap: 8px 2px; font-size: clamp(14px, 1.15vw, 17px); font-weight: 600; letter-spacing: -0.01em;">
 <a href="index.html#yontem" style="color: #4A3A62; text-decoration: none;">Yöntem</a>
 <a href="index.html#imza" style="color: #4A3A62; text-decoration: none;">Yaklaşım</a>
-<a href="index.html#influencer" style="color: #4A3A62; text-decoration: none;">Influencer</a>
+<a href="influencer.html" style="color: #4A3A62; text-decoration: none;">Influencer</a>
+<a href="rakamlar.html" style="color: #4A3A62; text-decoration: none;">Rakamlar</a>
 <a href="marketing-lab.html" style="color: #4A3A62; text-decoration: none;">Marketing Lab</a>
 <a href="index.html#sosyal" style="color: #4A3A62; text-decoration: none;">MED House Ajans</a>
 <a href="pazarlama-kulisi.html" style="color: #4A3A62; text-decoration: none;">Pazarlama Kulisi</a>
@@ -187,7 +188,7 @@ input,select,textarea{font-family:inherit}
 <a href="index.html#gorusme" class="btn m hcta" style="font-size: 12.5px; background: #E85D2A; border: 1px solid #E85D2A; color: #FFFFFF; padding: 17px 28px; text-decoration: none;">Ön görüşme</a>
 <details class="mnav"><summary aria-label="Menü"><span></span><span></span><span></span></summary>
 <div class="mnav-panel">
-<a href="index.html#yontem">Yöntem</a><a href="index.html#imza">Yaklaşım</a><a href="index.html#influencer">Influencer</a><a href="marketing-lab.html">Marketing Lab</a><a href="index.html#sosyal">MED House Ajans</a><a href="pazarlama-kulisi.html">Pazarlama Kulisi</a>
+<a href="index.html#yontem">Yöntem</a><a href="index.html#imza">Yaklaşım</a><a href="influencer.html">Influencer</a><a href="rakamlar.html">Rakamlar</a><a href="marketing-lab.html">Marketing Lab</a><a href="index.html#sosyal">MED House Ajans</a><a href="pazarlama-kulisi.html">Pazarlama Kulisi</a>
 <a href="index.html#gorusme" class="mnav-cta">Ön görüşme planlayın →</a>
 <div class="mnav-soc"><a href="https://www.linkedin.com/in/bektasaysun/">LinkedIn ↗</a><a href="https://www.instagram.com/bektasaysun_/">Instagram ↗</a></div>
 </div>
@@ -375,7 +376,7 @@ class Component extends DCLogic {
     const s = this.state;
     const B = (id) => BLOB(id);
     const fmt = (n) => n >= 1000 ? Math.round(n).toLocaleString('tr-TR') : String(Math.round(n));
-    const statData = [[150,'+','Ürün lansmanı','#imza'],[9,'','Marka','#rakamlar'],[88,'','Ünlü iş birliği','#imza'],[7,'','TV filmi','#imza'],[245,'','Dijital film · fikirden senaryoya','#imza'],[7000,'','ınfluencer çalışması','#influencer'],[90,'','ınfluencer etkinliği','#influencer'],[12,'+','Yıl, her aşamada','#yontem']];
+    const statData = [[150,'+','Ürün lansmanı','#imza'],[9,'','Marka','#rakamlar'],[88,'','Ünlü iş birliği','#imza'],[12,'','TV filmi','#imza'],[245,'','Dijital film · fikirden senaryoya','#imza'],[7000,'','ınfluencer çalışması','#influencer'],[90,'','ınfluencer etkinliği','#influencer'],[12,'+','Yıl, her aşamada','#yontem']];
     const pal = { navy: { bg: '#2A1D4A', fg: '#F5EFE6', bd: '#2A1D4A', num: '#E85D2A', track: 'rgba(245,239,230,0.15)' }, gold: { bg: '#E85D2A', fg: '#3A2550', bd: '#E85D2A', num: '#3A2550', track: 'rgba(42,29,74,0.18)' }, line: { bg: 'transparent', fg: '#3A2550', bd: 'rgba(42,29,74,0.25)', num: '#3A2550', track: 'rgba(42,29,74,0.12)' } };
     const bentoRaw = [
       ['Büyüme', [['~%120','ortalama yıllık ciro artışı, üç yıl üst üste','navy',2,90],['+%157','ciro büyümesine katkı, üç yılda','gold',1,100],['5 kat','pazar payı büyümesi, %0,5’ten %2,5’e','line',1,80],['8','kategoride pazar liderliği','line',1,70],['+%78','marka cirosu tek yılda; adette +%40','gold',1,60]]],

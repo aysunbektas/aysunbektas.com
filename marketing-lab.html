@@ -208,7 +208,7 @@ input,select,textarea{font-family:inherit}
 <div class="m" style="font-size: 12px; color: #E85D2A;">{{ cur.no }} · {{ cur.kicker }}</div>
 <h3 class="d" style="margin: 0; font-weight: 800; font-size: clamp(30px, 3vw, 42px); line-height: 1; letter-spacing: -0.04em;">{{ cur.title }}</h3>
 <p style="margin: 0; font-size: 17px; color: #CFC6DD;">{{ cur.lead }}</p>
-<sc-if value="{{ cur.isInf }}" hint-placeholder-val="{{ false }}"><a href="index.html#influencer" class="m" style="font-size: 11px; color: #E85D2A; text-decoration: none;">Hangi influencer ile çalışmalıyız? → seçim yaklaşımı</a></sc-if>
+<sc-if value="{{ cur.isInf }}" hint-placeholder-val="{{ false }}"><a href="influencer.html" class="m" style="font-size: 11px; color: #E85D2A; text-decoration: none;">Hangi influencer ile çalışmalıyız? → seçim yaklaşımı</a></sc-if>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px;">
 <sc-for list="{{ cur.items }}" as="it" hint-placeholder-count="3">
 <li style="display: flex; gap: 12px; align-items: baseline; font-size: 17px;"><span aria-hidden="true" style="flex: 0 0 8px; height: 8px; border-radius: 50%; background: #E85D2A; transform: translateY(-2px);"></span><span>{{it}}</span></li>
