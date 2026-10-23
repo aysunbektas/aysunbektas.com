@@ -53,7 +53,7 @@ img{display:block}
 .node:hover,.node:focus-visible{transform:none}
 }
 @keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
-.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
+@supports (animation-timeline: view()){section h2,section p,section .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){.node,.tile{transition:none}section h2,section p,section .rv{animation:none}}
 input,select,textarea{font-family:inherit}
 </style>
