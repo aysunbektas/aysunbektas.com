@@ -79,6 +79,7 @@ input,select,textarea{font-family:inherit}
 .zoom{animation:zoomin linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
 }
 @media (prefers-reduced-motion: reduce){.rv,.zoom{animation:none}.ph,.row,.tile{transition:none}}
+.soc{transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease}.soc:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(42,29,74,.5);background:#E85D2A!important;border-color:#E85D2A!important;color:#FFFFFF!important}
 .infc{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease}
 .infc::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 90% -10%,rgba(232,93,42,.28),transparent 60%);opacity:0;transition:opacity .4s ease;pointer-events:none}
 .infc::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:#E85D2A;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
@@ -112,10 +113,9 @@ input,select,textarea{font-family:inherit}
 </header>
 
 <section id="top" class="lt" style="position: relative; overflow: hidden; background: #F5EFE6; color: #3A2550;">
-<div style="max-width: 1440px; margin: 0 auto; padding: 28px 28px 0; display: flex; flex-wrap: wrap; gap: 32px 28px; align-items: stretch;">
-<div style="flex: 1 1 420px; min-width: 0; max-width: 600px; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding-bottom: 20px;">
+<div style="max-width: 1440px; margin: 0 auto; padding: 28px 28px 0; min-height: min(760px, calc(100vh - 104px)); display: flex; flex-wrap: wrap; gap: 32px 28px; align-items: stretch;">
+<div style="flex: 1 1 420px; min-width: 0; max-width: 600px; display: flex; flex-direction: column; justify-content: flex-start; gap: 12px; padding-bottom: 20px;">
 <h1 class="d" style="margin: 0; color: #3A2550; font-weight: 800; font-size: clamp(40px, 4.6vw, 72px); line-height: 0.96; letter-spacing: -0.04em;">Herkes aynı şeyi anlatırken <span class="gi">sesi duyulan</span> markaları kuran pazarlamacı.</h1>
-<p style="margin: 0; max-width: 540px; font-size: clamp(16px, 1.3vw, 18px); line-height: 1.45; color: #4A3A62; border-top: 1px solid #E0D6C8; padding-top: 12px;">Markanın hedefini satışa ya da bilinirliğe dönüştüren ekosistemler kurar. Kozmetik, dermokozmetik ve takviye edici gıdada 150'yi aşan ürün lansmanı.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 8px; max-width: 620px;">
 <a href="#yontem" class="m chip" style="font-size: 9.5px; padding: 8px 12px; border-radius: 999px; border: 1px solid #D8CFC2; color: #4A3A62; text-decoration: none;">Marka stratejisi</a>
 <a href="marketing-lab.html#harita" class="m chip" style="font-size: 9.5px; padding: 8px 12px; border-radius: 999px; border: 1px solid #D8CFC2; color: #4A3A62; text-decoration: none;">Lansman</a>
@@ -137,7 +137,11 @@ input,select,textarea{font-family:inherit}
 </form>
 <div style="font-size: 12px; color: #6E5F82;">Kaydolarak <a href="#kvkk" style="color: #4A3A62;">aydınlatma metnini</a> kabul etmiş olursunuz. Tek tıkla çıkış.</div>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; font-size: 15px; color: #6E5F82;"><a href="mailto:hello@aysunbektas.com" style="color: #3A2550; text-decoration: none; border-bottom: 1px solid #E85D2A;">hello@aysunbektas.com</a><a href="https://www.linkedin.com/in/bektasaysun/" style="color: #4A3A62; text-decoration: none;">LinkedIn ↗</a><a href="https://www.instagram.com/bektasaysun_/" style="color: #4A3A62; text-decoration: none;">Instagram ↗</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin-top: 4px;">
+<a href="https://www.linkedin.com/in/bektasaysun/" class="soc" style="display: inline-flex; align-items: center; gap: 9px; padding: 11px 18px 11px 14px; border-radius: 999px; background: #2A1D4A; color: #F5EFE6; text-decoration: none; font-size: 14px; font-weight: 600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>LinkedIn’de takip edin</a>
+<a href="https://www.instagram.com/bektasaysun_/" class="soc" style="display: inline-flex; align-items: center; gap: 9px; padding: 11px 18px 11px 14px; border-radius: 999px; border: 1.5px solid #2A1D4A; color: #2A1D4A; text-decoration: none; font-size: 14px; font-weight: 600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>Instagram</a>
+<a href="mailto:hello@aysunbektas.com" style="color: #3A2550; text-decoration: none; border-bottom: 1px solid #E85D2A; font-size: 15px; margin-left: 6px;">hello@aysunbektas.com</a>
+</div>
 </div>
 <div style="flex: 1.4 1 520px; min-width: 0; max-width: 900px; margin-left: auto; align-self: stretch; position: relative; min-height: 520px; margin-top: 2px; display: flex; align-items: flex-end; justify-content: center;">
 <img src="assets/c8a4811113e671c013b5b28b96175f62.webp" alt="Aysun Bektaş" style="display: block; height: 100%; width: 100%; object-fit: cover; object-position: center top;">
