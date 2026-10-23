@@ -94,8 +94,8 @@ input,select,textarea{font-family:inherit}
 @media (max-width:900px){.inf-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media (max-width:560px){.inf-grid{grid-template-columns:1fr!important}}
 </style>
 <style>#dc-root[hidden]{display:none}</style>
-<script src="morphdom.min.js?v=a705a063"></script>
-<script src="dc.js?v=a705a063"></script>
+<script src="morphdom.min.js?v=da879521"></script>
+<script src="dc.js?v=da879521"></script>
 </head>
 <body>
 <div id="dc-root" hidden></div>
@@ -569,9 +569,10 @@ input,select,textarea{font-family:inherit}
 <section id="kayit" style="background: #211743; color: #F5EFE6; border-top: 1px solid #473867; position: relative; overflow: hidden;">
 <div style="max-width: 1440px; margin: 0 auto; padding: 110px 28px; display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: center;">
 <div class="rv" style="flex: 1 1 380px; min-width: 0; max-width: 520px; display: flex; flex-direction: column; gap: 22px;">
-<div style="display: inline-flex; align-items: center; gap: 10px;"><span class="m" style="font-size: 11px; color: #E85D2A;">06b — Kısa video serisi</span><span class="m blink" style="font-size: 10px; padding: 6px 12px; border-radius: 999px; background: #E85D2A; color: #FFFFFF;">Yakında</span></div>
+<div style="display: inline-flex; align-items: center; gap: 10px;"><span class="m" style="font-size: 11px; color: #E85D2A;">06b — Creator economy serisi</span><span class="m blink" style="font-size: 10px; padding: 6px 12px; border-radius: 999px; background: #E85D2A; color: #FFFFFF;">Yakında</span></div>
 <h2 class="d" style="margin: 0; font-weight: 800; font-size: clamp(38px, 5vw, 72px); line-height: 0.98; letter-spacing: -0.04em;">Kulis <span class="gi">kayıtta.</span></h2>
-<p style="margin: 0; font-size: 19px; line-height: 1.55; color: #CFC6DD;">Kampanyaları Pazarlama Kulisi'nde yazıyoruz; burada da kameraya anlatacağız. Bir fikir nasıl doğar, sette ne değişir, rafta ne olur: her bölüm bir dakikada tek bir ders. İlk bölümler Instagram'da yayınlanacak, kayıtlar burada toplanacak.</p>
+<p style="margin: 0; font-size: 19px; line-height: 1.55; color: #CFC6DD;">Creator economy'de herkes tek bir sandalyeden konuşuyor: ya marka, ya influencer, ya ajans. Bu seride dört sandalyeye birden konuşacağım; çünkü aynı kampanyayı dördü de farklı yaşıyor ve işe yarayan, hepsini aynı masaya oturtan dil. Fikir nasıl doğar, sette ne değişir, rafta ne olur, topluluk nasıl büyür: her bölüm bir dakikada tek bir ders. İlk bölümler Instagram'da.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="m" style="font-size: 10px; padding: 8px 12px; border-radius: 999px; border: 1px solid #473867; color: #CFC6DD;">Markaya</span><span class="m" style="font-size: 10px; padding: 8px 12px; border-radius: 999px; border: 1px solid #473867; color: #CFC6DD;">Creator'a</span><span class="m" style="font-size: 10px; padding: 8px 12px; border-radius: 999px; border: 1px solid #473867; color: #CFC6DD;">Ajansa</span><span class="m" style="font-size: 10px; padding: 8px 12px; border-radius: 999px; border: 1px solid #473867; color: #CFC6DD;">Tüketiciye</span><span class="m" style="font-size: 10px; padding: 8px 12px; border-radius: 999px; background: #E85D2A; color: #FFFFFF;">+ Community management</span></div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
 <a href="https://www.instagram.com/bektasaysun_/" class="soc" style="display: inline-flex; align-items: center; gap: 9px; padding: 13px 20px 13px 16px; border-radius: 999px; background: #E85D2A; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>İlk bölüm için Instagram'da takipte kalın</a>
 <a href="#abone" style="color: #CFC6DD; text-decoration: none; font-size: 14px; border-bottom: 1px solid #E85D2A;">Bültene haber gelsin</a>
@@ -793,7 +794,7 @@ class Component extends DCLogic {
       { x: (837/12).toFixed(2), t: 'Influencer', r: 'Tavsiye ve kanıt' },
       { x: (1040/12).toFixed(2), t: 'Etkinlik · Raf', r: 'Deneyim ve dönüşüm' }
     ];
-    const episodes = [['01','Fikir nereden doğar?',0],['02','Sette ne değişir?',22],['03','Rafta ne olur?',0],['04','Hangi yüz, neden?',22]].map(([no,t,mt]) => ({ no, t, mt }));
+    const episodes = [['01','Fikir nereden doğar?',0],['02','Sette ne değişir?',22],['03','Rafta ne olur?',0],['04','Topluluk nasıl büyür?',22]].map(([no,t,mt]) => ({ no, t, mt }));
     const steps = [];
     return {
       episodes,
