@@ -87,13 +87,25 @@
         childrenOnly: true,
         onBeforeElUpdated: function (from, to) {
           if (to._h) from._h = to._h; else if (from._h) from._h = null;
+          if (from.classList && from.classList.contains('in') && to.classList && to.classList.contains('rv')) to.classList.add('in');
           if (from === document.activeElement && (from.tagName === 'INPUT' || from.tagName === 'TEXTAREA' || from.tagName === 'SELECT')) { return false; }
           if (from.tagName === 'VIDEO' && from.getAttribute('src') === to.getAttribute('src')) return false;
           return true;
         }
       });
     } else { this._root.innerHTML = ''; while (frag.firstChild) this._root.appendChild(frag.firstChild); }
+    reveal(this._root);
   };
+  var io = null;
+  function reveal(root) {
+    var els = root.querySelectorAll('.rv:not(.in)');
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) { for (var i = 0; i < els.length; i++) els[i].classList.add('in'); return; }
+    if (!io) io = new IntersectionObserver(function (entries) {
+      for (var j = 0; j < entries.length; j++) if (entries[j].isIntersecting) { entries[j].target.classList.add('in'); io.unobserve(entries[j].target); }
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    for (var k = 0; k < els.length; k++) if (!els[k]._rv) { els[k]._rv = true; io.observe(els[k]); }
+  }
 
   function delegate(root, type) {
     root.addEventListener(type, function (e) {

@@ -39,7 +39,7 @@
 .shimmer{background:linear-gradient(100deg,#F5EFE6 0%,#F5EFE6 35%,#E85D2A 50%,#F5EFE6 65%,#F5EFE6 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:shine 4s linear infinite}
 .chip{transition:border-color .25s ease,color .25s ease}.chip:hover{border-color:#E85D2A!important;color:#E85D2A!important}
 .node{transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
-.node[aria-pressed="true"]{animation:nodepulse 2.4s ease-in-out infinite}
+.node[aria-pressed="true"]{animation:nodepulse 2.4s ease-in-out infinite;transform:translate(-50%,-50%) scale(1.04)}
 @keyframes nodepulse{0%,100%{box-shadow:0 0 24px rgba(232,93,42,.25)}50%{box-shadow:0 0 56px rgba(232,93,42,.6)}}
 @keyframes dashflow{to{stroke-dashoffset:-28}}
 .flow path{stroke-dasharray:10 8;animation:dashflow 1.1s linear infinite}
@@ -76,7 +76,7 @@ input,select,textarea{font-family:inherit}
 @keyframes rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
 @keyframes zoomin{from{opacity:.3;transform:scale(1.06)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){
-.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1)}.rv.in{opacity:1;transform:none}
 .zoom{animation:zoomin linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
 }
 @media (prefers-reduced-motion: reduce){.rv,.zoom{animation:none}.ph,.row,.tile{transition:none}}
@@ -92,8 +92,8 @@ input,select,textarea{font-family:inherit}
 @media (max-width:900px){.inf-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media (max-width:560px){.inf-grid{grid-template-columns:1fr!important}}
 </style>
 <style>#dc-root[hidden]{display:none}</style>
-<script src="morphdom.min.js?v=bbec946e"></script>
-<script src="dc.js?v=bbec946e"></script>
+<script src="morphdom.min.js?v=a705a063"></script>
+<script src="dc.js?v=a705a063"></script>
 </head>
 <body>
 <div id="dc-root" hidden></div>
@@ -195,12 +195,12 @@ input,select,textarea{font-family:inherit}
 <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
 </defs>
 <g fill="none" stroke="#E85D2A" stroke-width="2" vector-effect="non-scaling-stroke" class="flow">
-<path d="M190 120 H262" marker-end="url(#ar)"></path>
-<path d="M452 120 H502" marker-end="url(#ar)"></path>
-<path d="M692 120 H742" marker-end="url(#ar)"></path>
-<path d="M932 120 H982" marker-end="url(#ar)"></path>
+<path d="M190 120 H262" marker-end="url(#ar)" stroke-width="{{ a0w }}" opacity="{{ a0o }}"></path>
+<path d="M452 120 H502" marker-end="url(#ar)" stroke-width="{{ a1w }}" opacity="{{ a1o }}"></path>
+<path d="M692 120 H742" marker-end="url(#ar)" stroke-width="{{ a2w }}" opacity="{{ a2o }}"></path>
+<path d="M932 120 H982" marker-end="url(#ar)" stroke-width="{{ a3w }}" opacity="{{ a3o }}"></path>
 </g>
-<g fill="none" stroke="#4A3A62" stroke-width="2" vector-effect="non-scaling-stroke" stroke-dasharray="4 6">
+<g fill="none" stroke="{{ gridStroke }}" stroke-width="2" vector-effect="non-scaling-stroke" stroke-dasharray="4 6">
 <path d="M837 150 V218 H180 V260 M837 218 H420 V260 M837 218 H660 V260 M837 218 V260 M837 218 H1040 V260"></path>
 <path d="M180 330 V380 H1040 V330 M420 330 V380 M660 330 V380 M837 330 V380 M1040 330 V380"></path>
 </g>
@@ -219,7 +219,7 @@ input,select,textarea{font-family:inherit}
 <text x="1082" y="56" text-anchor="middle">ÇIKTI</text>
 <text x="40" y="252" fill="#E85D2A">MECRA ROLLERİ</text>
 <text x="40" y="440" fill="#E85D2A">ÖLÇÜM DÖNGÜSÜ</text>
-<text x="1160" y="618" text-anchor="end">DÜĞÜMLERE TIKLAYIN</text>
+<text x="1160" y="618" text-anchor="end" fill="{{ hintFill }}">{{ hintTxt }}</text>
 </g>
 <g>
 <rect x="232" y="158" width="250" height="42" rx="8" fill="#211743" stroke="{{ kpiBd }}" stroke-width="1"></rect>
@@ -234,7 +234,8 @@ input,select,textarea{font-family:inherit}
 <text x="610" y="472" text-anchor="middle">ERİŞİM → ETKİLEŞİM → TRAFİK → SATIŞ → TEKRAR SATIN ALMA</text>
 <text x="610" y="500" text-anchor="middle" fill="#E85D2A" font-size="10">İŞE YARAYAN BÜYÜTÜLÜR · YARAMAYAN KAPATILIR · BÜTÇE HER AY YENİDEN DAĞITILIR</text>
 </g>
-<circle r="5" fill="#E85D2A" filter="url(#glow)"><animateMotion dur="7s" repeatCount="indefinite" path="M100 120 H1082 V300"></animateMotion></circle>
+<circle r="7" fill="#F5EFE6" filter="url(#glow)"><animateMotion dur="6s" repeatCount="indefinite" path="M100 120 H1082 V300"></animateMotion></circle>
+<circle r="4" fill="#E85D2A" filter="url(#glow)"><animateMotion dur="6s" begin="0.35s" repeatCount="indefinite" path="M100 120 H1082 V300"></animateMotion></circle>
 <circle r="4" fill="#E85D2A" opacity="0.8"><animateMotion dur="9s" begin="2s" repeatCount="indefinite" path="M837 150 V200 H180 V260"></animateMotion></circle>
 <circle r="4" fill="#E85D2A" opacity="0.8"><animateMotion dur="9s" begin="4s" repeatCount="indefinite" path="M837 150 V200 H1040 V260"></animateMotion></circle>
 <circle r="4" fill="#E85D2A" opacity="0.8"><animateMotion dur="8s" begin="1s" repeatCount="indefinite" path="M180 330 V380 H610 V410"></animateMotion></circle>
@@ -255,7 +256,7 @@ input,select,textarea{font-family:inherit}
 <span class="m" style="font-size: 10px; padding: 7px 14px; border-radius: 999px; background: {{ chipA }}; color: {{ chipAfg }}; font-weight: 500; border: 1px solid #E85D2A;">Satış</span>
 <span class="m" style="font-size: 10px; padding: 7px 14px; border-radius: 999px; background: {{ chipB }}; color: {{ chipBfg }}; border: 1px solid #E85D2A;">Bilinirlik</span>
 </div>
-<div class="pulsebox" style="position: absolute; left: 50.8%; top: 76%; transform: translate(-50%, -50%); width: 62%; height: 12%; border: 1px solid #E85D2A; border-radius: 14px; background: transparent; pointer-events: none;"></div>
+<div class="pulsebox" style="position: absolute; left: 50.8%; top: 76%; transform: translate(-50%, -50%); width: 62%; height: 12%; border: {{ loopBd }}; border-radius: 14px; background: {{ loopBg }}; box-shadow: {{ loopSh }}; pointer-events: none; transition: all .4s ease;"></div>
 </div>
 </div>
 
@@ -384,7 +385,7 @@ input,select,textarea{font-family:inherit}
 <div style="display: flex; flex-direction: column; gap: 18px; max-width: 860px;">
 <div class="m rv" style="font-size: 11px; color: #E85D2A;">Sınır ötesi ınfluencer · Türkiye'de alınacaklar listesi</div>
 <h2 class="d rv" style="margin: 0; font-weight: 800; font-size: clamp(38px, 5.2vw, 84px); line-height: 0.98; letter-spacing: -0.045em;">Yabancı influencer'larla satış noktasına <span class="gi">tüketici akışı.</span></h2>
-<p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #CFC6DD; max-width: 760px;">Türkiye'ye gelen milyonlarca turist, ülkesinden çıkmadan önce "Türkiye'de ne almalı?" listelerine bakıyor. Bu listeleri yazan Rusça, Arapça, Almanca ve Farsça konuşan creator'larla kurulan ekosistem, markayı eczane ve perakende rafına yabancı tüketiciyi taşıyan bir kanala dönüştürür; aynı içerikler Türk tüketicide de "yurt dışında aranan ürün" algısı yaratır.</p>
+<p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #CFC6DD; max-width: 760px;">Türkiye'ye gelen milyonlarca turist, ülkesinden çıkmadan önce "Türkiye'de ne almalı?" listelerine bakıyor. Bu listeleri yazan Rusça, Arapça, Almanca ve Farsça konuşan creator'larla kurulan ekosistem, markayı eczane ve perakende rafına yabancı tüketiciyi taşıyan bir kanala dönüştürür; aynı içerikler Türk tüketicide de "yurt dışında aranan ürün" algısı yaratır. Bu modeli Türkiye'de kuran ekibi yönettim; creator seçiminden raf hazırlığına kadar işin mutfağını sahada öğrendim. Bu projeyle içeriği ölçülebilir satışa dönüştüren sistemler kurduk. Bu modeli Türkiye'de ilk kuran ekiplerden birinde görev aldım; creator seçiminden raf hazırlığına kadar işin mutfağını yaşayarak öğrenmek, planı kâğıt üzerinde değil sahada çalışır hale getiriyor.</p>
 </div>
 <div class="rv" style="display: flex; flex-wrap: wrap; gap: 8px; max-width: 420px;">
 <sc-for list="{{ markets }}" as="mk" hint-placeholder-count="6">
@@ -692,6 +693,15 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     this.state = { trail: [], last: null, n: 0, step: 0, subscribed: false, sent: false, sub: false, cnt: 0, counting: false, cnt2: 0, cnt3: 0 };
+    this._touched = false; this._auto = null;
+    setTimeout(() => {
+      try {
+        const sec = document.getElementById('yontem');
+        const startAuto = () => { if (this._touched || this._auto) return; this._auto = setInterval(() => { if (this._touched) return; this.setState({ step: (this.state.step + 1) % 5 }); }, 2800); };
+        const stopAuto = () => { if (this._auto) { clearInterval(this._auto); this._auto = null; } };
+        if (sec && 'IntersectionObserver' in window) { new IntersectionObserver((es) => { es.some(x => x.isIntersecting) ? startAuto() : stopAuto(); }, { threshold: 0.2 }).observe(sec); } else { startAuto(); }
+      } catch (e) {}
+    }, 80);
     const start = () => {
       if (this.state.counting) return;
       this.setState({ counting: true });
@@ -764,7 +774,7 @@ class Component extends DCLogic {
     const cur = s.step < 0 ? 0 : s.step;
     const nodes = stepData.map((x, i) => ({ k: '0' + (i + 1), t: x.t, x: (pos[i][0] / 12).toFixed(2), y: (pos[i][1] / 6.4).toFixed(2), w: (pos[i][2] / 12).toFixed(2),
       sel: i === cur ? 'true' : 'false', bg: i === cur ? '#E85D2A' : '#2A1D4A', fg: i === cur ? '#2A1D4A' : '#F5EFE6', bd: i === cur ? '#E85D2A' : '#4A3A62', sh: i === cur ? '0 0 40px rgba(232,93,42,0.35)' : 'none',
-      pick: () => this.setState({ step: i }) }));
+      pick: () => { this._touched = true; if (this._auto) { clearInterval(this._auto); this._auto = null; } this.setState({ step: i }); } }));
     const media = [
       { x: (180/12).toFixed(2), t: 'TV', r: 'Erişim ve güven' },
       { x: (420/12).toFixed(2), t: 'Dijital pazarlama', r: 'Hedefleme ve satış' },
@@ -777,6 +787,9 @@ class Component extends DCLogic {
       trail, onTrail, steps, nodes, media, stats,
       kpiFill: cur === 1 ? '#F5EFE6' : '#8E84A3', insFill: cur === 2 ? '#F5EFE6' : '#8E84A3', kpiBd: cur === 1 ? '#E85D2A' : '#4A3A62', insBd: cur === 2 ? '#E85D2A' : '#4A3A62',
       mediaBd: cur === 3 ? '#E85D2A' : '#473867', mediaSh: cur === 3 ? '0 0 30px rgba(232,93,42,0.25)' : 'none',
+      a0w: cur === 1 ? 4 : 2, a1w: cur === 2 ? 4 : 2, a2w: cur === 3 ? 4 : 2, a3w: cur === 4 ? 4 : 2, a0o: cur === 1 ? 1 : 0.45, a1o: cur === 2 ? 1 : 0.45, a2o: cur === 3 ? 1 : 0.45, a3o: cur === 4 ? 1 : 0.45,
+      gridStroke: cur === 3 ? '#9C8BC2' : '#5E4C80', loopBd: cur === 4 ? '2px solid #E85D2A' : '1px solid rgba(232,93,42,0.6)', loopBg: cur === 4 ? 'rgba(232,93,42,0.10)' : 'transparent', loopSh: cur === 4 ? '0 0 40px rgba(232,93,42,0.35)' : 'none',
+      hintTxt: this._touched ? 'DÜĞÜMLERE TIKLAYIN' : 'OTOMATİK AKIŞ · DURDURMAK İÇİN BİR ADIMA TIKLAYIN', hintFill: this._touched ? '#8E84A3' : '#E85D2A',
       chipA: cur === 4 || cur === 1 ? '#E85D2A' : 'transparent', chipAfg: cur === 4 || cur === 1 ? '#2A1D4A' : '#E85D2A', chipB: 'transparent', chipBfg: '#E85D2A', nodeK: '0' + (cur + 1), nodeT: stepData[cur].t, nodeD: stepData[cur].d,
       subscribed: !!s.subscribed, subBtn: s.sub ? 'Teşekkürler' : 'Abone olun',
       subscribe: () => this.setState({ subscribed: true, sub: true }),
