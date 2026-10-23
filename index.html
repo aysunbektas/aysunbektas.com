@@ -65,6 +65,7 @@ img,video{display:block}
 .btn{transition:background .25s ease,color .25s ease,border-color .25s ease}
 .btn:hover{background:#E85D2A;color:#2A1D4A;border-color:#E85D2A}
 .btng:hover{background:#FFFFFF;border-color:#FFFFFF;color:#2A1D4A}
+header nav a{position:relative;padding-bottom:4px}header nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#E85D2A;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}header nav a:hover::after{transform:scaleX(1)}
 .btnd:hover{background:#2A1D4A;color:#F5EFE6;border-color:#2A1D4A}
 input,select,textarea{font-family:inherit}
 .fld{background:transparent;border:0;border-bottom:1px solid #8E84A3;border-radius:0;padding:14px 0;font-size:18px;outline:none}
@@ -80,8 +81,8 @@ input,select,textarea{font-family:inherit}
 @media (prefers-reduced-motion: reduce){.rv,.zoom{animation:none}.ph,.row,.tile{transition:none}}
 </style>
 <style>#dc-root[hidden]{display:none}</style>
-<script src="morphdom.min.js"></script>
-<script src="dc.js"></script>
+<script src="morphdom.min.js?v=bbec946e"></script>
+<script src="dc.js?v=bbec946e"></script>
 </head>
 <body>
 <div id="dc-root" hidden></div>
@@ -90,25 +91,25 @@ input,select,textarea{font-family:inherit}
 
 <header style="position: sticky; top: 0; z-index: 20; background: rgba(245,239,230,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #E0D6C8;">
 <div style="max-width: 1440px; margin: 0 auto; padding: 22px 40px; display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: space-between; align-items: center;">
-<a href="#top" class="m" style="font-size: 15px; letter-spacing: 0.22em; color: #3A2550; text-decoration: none; font-weight: 500;">Aysun <span style="color: #E85D2A;">Bektaş</span></a>
-<nav aria-label="Ana menü" class="m" style="display: flex; flex-wrap: wrap; gap: 8px 30px; font-size: 12.5px;">
+<a href="#top" class="d" style="font-size: 24px; font-weight: 800; letter-spacing: -0.03em; color: #3A2550; text-decoration: none;">Aysun Bektaş<span style="color: #E85D2A;">.</span></a>
+<nav aria-label="Ana menü" style="display: flex; flex-wrap: wrap; gap: 8px 32px; font-size: 15px; font-weight: 500; letter-spacing: 0.01em;">
 <a href="#yontem" style="color: #4A3A62; text-decoration: none;">Yöntem</a>
 <a href="#projeler" style="color: #4A3A62; text-decoration: none;">Projeler</a>
-<a href="#influencer" style="color: #4A3A62; text-decoration: none;">ınfluencer</a>
+<a href="#influencer" style="color: #4A3A62; text-decoration: none;">Influencer</a>
 <a href="marketing-lab.html" style="color: #4A3A62; text-decoration: none;">Marketing Lab</a>
 <a href="#sosyal" style="color: #4A3A62; text-decoration: none;">Medhouse</a>
 <a href="#kulis" style="color: #4A3A62; text-decoration: none;">Pazarlama Kulisi</a>
 </nav>
-<a href="#gorusme" class="btng m" style="font-size: 12px; border: 1px solid #E85D2A; color: #C9481A; padding: 14px 24px; text-decoration: none;">Ön görüşme</a>
+<a href="#gorusme" class="btn m" style="font-size: 11px; background: #E85D2A; border: 1px solid #E85D2A; color: #FFFFFF; padding: 15px 26px; text-decoration: none;">Ön görüşme</a>
 </div>
 </header>
 
 <section id="top" class="lt" style="position: relative; overflow: hidden; background: #F5EFE6; color: #3A2550;">
-<div style="max-width: 1440px; margin: 0 auto; padding: 36px 28px 0; display: flex; flex-wrap: wrap; gap: 32px 28px; align-items: stretch;">
-<div style="flex: 1 1 420px; min-width: 0; max-width: 600px; display: flex; flex-direction: column; justify-content: center; gap: 14px; padding-bottom: 24px;">
-<div class="m" style="font-size: 12px; color: #E85D2A;">Pazarlama ekosistemi mimarı</div>
+<div style="max-width: 1440px; margin: 0 auto; padding: 28px 28px 0; display: flex; flex-wrap: wrap; gap: 32px 28px; align-items: stretch;">
+<div style="flex: 1 1 420px; min-width: 0; max-width: 600px; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding-bottom: 20px;">
+<div style="display: flex; flex-direction: column; gap: 6px;"><div class="d" style="font-size: clamp(24px, 2.2vw, 32px); font-weight: 800; letter-spacing: -0.03em; color: #3A2550; line-height: 1;">Aysun Bektaş</div><div class="m" style="font-size: 11px; color: #E85D2A;">Pazarlama ekosistemi mimarı</div></div>
 <h1 class="d" style="margin: 0; color: #3A2550; font-weight: 800; font-size: clamp(40px, 4.6vw, 72px); line-height: 0.96; letter-spacing: -0.04em;">Herkes aynı şeyi anlatırken <span class="gi">sesi duyulan</span> markaları kuran pazarlamacı.</h1>
-<p style="margin: 0; max-width: 540px; font-size: clamp(16px, 1.3vw, 18px); line-height: 1.45; color: #4A3A62; border-top: 1px solid #E0D6C8; padding-top: 16px;">Aysun Bektaş. Markanın hedefini satışa ya da bilinirliğe dönüştüren ekosistemler kurar. Kozmetik, dermokozmetik ve takviye edici gıdada 150'yi aşan ürün lansmanı.</p>
+<p style="margin: 0; max-width: 540px; font-size: clamp(16px, 1.3vw, 18px); line-height: 1.45; color: #4A3A62; border-top: 1px solid #E0D6C8; padding-top: 12px;">Markanın hedefini satışa ya da bilinirliğe dönüştüren ekosistemler kurar. Kozmetik, dermokozmetik ve takviye edici gıdada 150'yi aşan ürün lansmanı.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 8px; max-width: 620px;">
 <a href="#yontem" class="m chip" style="font-size: 9.5px; padding: 8px 12px; border-radius: 999px; border: 1px solid #D8CFC2; color: #4A3A62; text-decoration: none;">Marka stratejisi</a>
 <a href="marketing-lab.html#harita" class="m chip" style="font-size: 9.5px; padding: 8px 12px; border-radius: 999px; border: 1px solid #D8CFC2; color: #4A3A62; text-decoration: none;">Lansman</a>
