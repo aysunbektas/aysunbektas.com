@@ -315,7 +315,7 @@ input,select,textarea{font-family:inherit}
 </button>
 </sc-for>
 <sc-for list="{{ media }}" as="c" hint-placeholder-count="5">
-<div style="position: absolute; left: {{c.x}}%; top: 46%; width: 12.1%; transform: translate(-50%, -50%); background: #2A1D4A; border: 1px solid {{ mediaBd }}; box-shadow: {{ mediaSh }}; border-radius: 10px; padding: 10px 11px; display: flex; flex-direction: column; gap: 4px; transition: border-color .4s ease, box-shadow .4s ease;">
+<div style="position: absolute; left: {{c.x}}%; top: 46%; width: 12.1%; min-height: 11.5%; box-sizing: border-box; transform: translate(-50%, -50%); background: #2A1D4A; border: 1px solid {{ mediaBd }}; box-shadow: {{ mediaSh }}; border-radius: 10px; padding: 10px 11px; display: flex; flex-direction: column; gap: 4px; transition: border-color .4s ease, box-shadow .4s ease;">
 <span class="d" style="font-weight: 800; font-size: clamp(12.5px, 1.05vw, 15px); line-height: 1.1; letter-spacing: -0.02em; color: #F5EFE6;">{{c.t}}</span>
 <span style="font-size: clamp(10px, 0.8vw, 11.5px); line-height: 1.3; color: #B3A8C6;">{{c.r}}</span>
 </div>
@@ -896,13 +896,13 @@ class Component extends DCLogic {
       sel: i === cur ? 'true' : 'false', bg: i === cur ? '#E85D2A' : '#2A1D4A', fg: i === cur ? '#2A1D4A' : '#F5EFE6', bd: i === cur ? '#E85D2A' : '#4A3A62', sh: i === cur ? '0 0 40px rgba(232,93,42,0.35)' : 'none',
       pick: () => { this._touched = true; if (this._auto) { clearInterval(this._auto); this._auto = null; } this.setState({ step: i }); } }));
     const media = [
-      { x: (120/12).toFixed(2), t: 'TV & medya', r: 'İletişim planı · erişim ve güven' },
-      { x: (280/12).toFixed(2), t: 'Dijital iletişim', r: 'Plan · hedefleme · dönüşüm' },
-      { x: (440/12).toFixed(2), t: 'Reklamlama', r: 'Kreatif ve performans' },
-      { x: (600/12).toFixed(2), t: 'Sosyal medya', r: 'İçerik ve süreklilik' },
-      { x: (760/12).toFixed(2), t: 'Topluluk & event', r: 'Topluluk yönetimi · etkinlik' },
-      { x: (920/12).toFixed(2), t: 'Influencer & ünlü', r: 'İş birlikleri · tavsiye' },
-      { x: (1080/12).toFixed(2), t: 'Kanal & raf', r: 'Çok kanallı portföy · raf' }
+      { x: (120/12).toFixed(2), t: 'TV & medya planı', r: 'Erişim ve güven' },
+      { x: (280/12).toFixed(2), t: 'Dijital & performans reklamı', r: 'Hedefleme ve dönüşüm' },
+      { x: (440/12).toFixed(2), t: 'Sosyal medya & içerik', r: 'Süreklilik ve marka sesi' },
+      { x: (600/12).toFixed(2), t: 'Topluluk yönetimi', r: 'Sadakat ve tavsiye' },
+      { x: (760/12).toFixed(2), t: 'Influencer & ünlü iş birlikleri', r: 'Güven ve kanıt' },
+      { x: (920/12).toFixed(2), t: 'PR & etkinlik', r: 'Haber değeri ve deneyim' },
+      { x: (1080/12).toFixed(2), t: 'Kanal & raf', r: 'Çok kanallı portföy ve dönüşüm' }
     ];
     const episodes = [['01','Fikir nereden doğar?',0],['02','Sette ne değişir?',22],['03','Rafta ne olur?',0],['04','Topluluk nasıl büyür?',22]].map(([no,t,mt]) => ({ no, t, mt }));
     const steps = [];
