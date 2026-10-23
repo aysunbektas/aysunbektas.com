@@ -702,38 +702,24 @@ class Component extends DCLogic {
         if (sec && 'IntersectionObserver' in window) { new IntersectionObserver((es) => { es.some(x => x.isIntersecting) ? startAuto() : stopAuto(); }, { threshold: 0.2 }).observe(sec); } else { startAuto(); }
       } catch (e) {}
     }, 80);
-    const start = () => {
-      if (this.state.counting) return;
-      this.setState({ counting: true });
-      const t0 = performance.now(), dur = 2200;
-      const tick = (t) => { const k = Math.min(1, (t - t0) / dur); const e = 1 - Math.pow(1 - k, 3); this.setState({ cnt: e }); if (k < 1) requestAnimationFrame(tick); };
+    // Replayable count-ups: animate whenever the block enters the viewport, reset when it leaves
+    const anim = (key, dur) => {
+      const run = ++this['_run_' + key];
+      const t0 = performance.now();
+      const tick = (t) => { if (this['_run_' + key] !== run) return; const k = Math.min(1, (t - t0) / dur); const e = 1 - Math.pow(1 - k, 3); const o = {}; o[key] = e; this.setState(o); if (k < 1) requestAnimationFrame(tick); };
       requestAnimationFrame(tick);
     };
-    this.startCount = start;
-    setTimeout(() => {
-      try {
-        const el3 = document.getElementById('sosyal');
-        const go3 = () => { if (this.state.cnt3 !== 0) return; const t0 = performance.now(), dur = 2000; const tick = (t) => { const k = Math.min(1, (t - t0) / dur); const e = 1 - Math.pow(1 - k, 3); this.setState({ cnt3: e }); if (k < 1) requestAnimationFrame(tick); }; requestAnimationFrame(tick); };
-        if (el3 && 'IntersectionObserver' in window) { const io3 = new IntersectionObserver((es) => { if (es.some(x => x.isIntersecting)) { go3(); io3.disconnect(); } }, { threshold: 0.2 }); io3.observe(el3); setTimeout(go3, 9000); } else { go3(); }
-      } catch (e) { this.setState({ cnt3: 1 }); }
-    }, 70);
-    setTimeout(() => {
-      try {
-        const el2 = document.getElementById('rakamlar');
-        const go2 = () => { if (this.state.cnt2 === 0) this.setState({ cnt2: 1 }); };
-        if (el2 && 'IntersectionObserver' in window) { const io2 = new IntersectionObserver((es) => { if (es.some(x => x.isIntersecting)) { go2(); io2.disconnect(); } }, { threshold: 0.15 }); io2.observe(el2); setTimeout(go2, 8000); } else { go2(); }
-      } catch (e) { this.setState({ cnt2: 1 }); }
-    }, 60);
-    setTimeout(() => {
-      try {
-        const el = document.getElementById('rakam-seridi');
-        if (el && 'IntersectionObserver' in window) {
-          const io = new IntersectionObserver((es) => { if (es.some(x => x.isIntersecting)) { start(); io.disconnect(); } }, { threshold: 0.25 });
-          io.observe(el);
-          setTimeout(start, 6000);
-        } else { start(); }
-      } catch (e) { start(); }
-    }, 50);
+    const watch = (id, key, dur, threshold) => {
+      this['_run_' + key] = 0;
+      const el = document.getElementById(id);
+      if (!el) { const o = {}; o[key] = 1; this.setState(o); return; }
+      if (!('IntersectionObserver' in window)) { const o = {}; o[key] = 1; this.setState(o); return; }
+      new IntersectionObserver((es) => {
+        es.forEach(x => { if (x.isIntersecting) anim(key, dur); else { this['_run_' + key]++; const o = {}; o[key] = 0; this.setState(o); } });
+      }, { threshold }).observe(el);
+    };
+    this.startCount = () => anim('cnt', 2200);
+    setTimeout(() => { try { watch('rakam-seridi', 'cnt', 2200, 0.3); watch('rakamlar', 'cnt2', 1800, 0.12); watch('sosyal', 'cnt3', 2000, 0.25); } catch (e) { this.setState({ cnt: 1, cnt2: 1, cnt3: 1 }); } }, 50);
   }
   renderVals() {
     const s = this.state;
