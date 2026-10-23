@@ -154,8 +154,8 @@ input,select,textarea{font-family:inherit}
  .imza-row{padding:32px 20px 56px!important}
  [style*="padding: 130px 28px 60px"]{padding:64px 20px 8px!important}
  .imza-proof{grid-template-columns:1fr!important}
- .cstrip{grid-template-columns:repeat(4,minmax(0,1fr))!important}
- .cstrip>div:nth-child(n+13){display:none}
+ .cstrip{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .cstrip .reel{margin-top:0!important}
  .ep-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
  .ep-grid .epc{margin-top:0!important}
  .davet{display:flex;flex-direction:column;min-height:0!important}
@@ -452,12 +452,29 @@ input,select,textarea{font-family:inherit}
 <div class="d" style="font-weight: 800; font-size: clamp(30px, 3vw, 44px); letter-spacing: -0.035em; color: #E85D2A;">7.000 ınfluencer · 90 etkinlik</div>
 </div>
 <div class="rv" style="flex: 1 1 460px; min-width: 0; order: 2;">
-<div class="cstrip" style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; align-items: start;">
-<sc-for list="{{ creators }}" as="t" hint-placeholder-count="18">
-<div class="phw" style="overflow: hidden; border-radius: 10px; aspect-ratio: 3 / 4; margin-top: {{t.mt}}px; box-shadow: 0 12px 24px rgba(0,0,0,0.3);"><img class="ph" src="{{t.src}}" alt="" aria-hidden="true" style="width: 100%; height: 100%; object-fit: cover;"></div>
-</sc-for>
+<div class="cstrip" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-items: start;">
+<div class="reel" style="position: relative; aspect-ratio: 9 / 16; margin-top: 0px; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg, #2A1D4A 0%, #2A1D4A 55%, #E85D2A 140%); border: 1px solid rgba(245,239,230,0.14); box-shadow: 0 16px 30px rgba(0,0,0,0.35); display: flex; flex-direction: column; justify-content: space-between; padding: 14px 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 6px;"><span class="m" style="font-size: 9px; color: #F5EFE6; opacity: .75;">Bölüm 01</span><span class="m" style="font-size: 8.5px; padding: 4px 7px; border-radius: 999px; background: #F5EFE6; color: #2A1D4A;">Yakında</span></div>
+<div style="align-self: center; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #F5EFE6; display: flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#F5EFE6"/></svg></div>
+<div><div class="d" style="font-weight: 800; font-size: clamp(17px, 1.6vw, 24px); line-height: 1; letter-spacing: -0.03em; color: #F5EFE6;">Markaya</div><div class="m" style="font-size: 8.5px; color: #F5EFE6; opacity: .7; margin-top: 6px;">konuşuyorum</div></div>
 </div>
-<div class="m" style="font-size: 10px; color: #8E84A3; margin-top: 12px;">ınfluencer içeriklerinden kareler</div>
+<div class="reel" style="position: relative; aspect-ratio: 9 / 16; margin-top: 36px; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg, #E85D2A 0%, #E85D2A 55%, #2A1D4A 140%); border: 1px solid rgba(245,239,230,0.14); box-shadow: 0 16px 30px rgba(0,0,0,0.35); display: flex; flex-direction: column; justify-content: space-between; padding: 14px 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 6px;"><span class="m" style="font-size: 9px; color: #F5EFE6; opacity: .75;">Bölüm 02</span><span class="m" style="font-size: 8.5px; padding: 4px 7px; border-radius: 999px; background: #F5EFE6; color: #2A1D4A;">Yakında</span></div>
+<div style="align-self: center; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #F5EFE6; display: flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#F5EFE6"/></svg></div>
+<div><div class="d" style="font-weight: 800; font-size: clamp(17px, 1.6vw, 24px); line-height: 1; letter-spacing: -0.03em; color: #F5EFE6;">Influencer'a</div><div class="m" style="font-size: 8.5px; color: #F5EFE6; opacity: .7; margin-top: 6px;">konuşuyorum</div></div>
+</div>
+<div class="reel" style="position: relative; aspect-ratio: 9 / 16; margin-top: 12px; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg, #3A2A5E 0%, #3A2A5E 55%, #E85D2A 140%); border: 1px solid rgba(245,239,230,0.14); box-shadow: 0 16px 30px rgba(0,0,0,0.35); display: flex; flex-direction: column; justify-content: space-between; padding: 14px 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 6px;"><span class="m" style="font-size: 9px; color: #F5EFE6; opacity: .75;">Bölüm 03</span><span class="m" style="font-size: 8.5px; padding: 4px 7px; border-radius: 999px; background: #F5EFE6; color: #2A1D4A;">Yakında</span></div>
+<div style="align-self: center; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #F5EFE6; display: flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#F5EFE6"/></svg></div>
+<div><div class="d" style="font-weight: 800; font-size: clamp(17px, 1.6vw, 24px); line-height: 1; letter-spacing: -0.03em; color: #F5EFE6;">Ajansa</div><div class="m" style="font-size: 8.5px; color: #F5EFE6; opacity: .7; margin-top: 6px;">konuşuyorum</div></div>
+</div>
+<div class="reel" style="position: relative; aspect-ratio: 9 / 16; margin-top: 48px; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg, #C9481A 0%, #C9481A 55%, #2A1D4A 140%); border: 1px solid rgba(245,239,230,0.14); box-shadow: 0 16px 30px rgba(0,0,0,0.35); display: flex; flex-direction: column; justify-content: space-between; padding: 14px 12px;">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 6px;"><span class="m" style="font-size: 9px; color: #F5EFE6; opacity: .75;">Bölüm 04</span><span class="m" style="font-size: 8.5px; padding: 4px 7px; border-radius: 999px; background: #F5EFE6; color: #2A1D4A;">Yakında</span></div>
+<div style="align-self: center; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #F5EFE6; display: flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="#F5EFE6"/></svg></div>
+<div><div class="d" style="font-weight: 800; font-size: clamp(17px, 1.6vw, 24px); line-height: 1; letter-spacing: -0.03em; color: #F5EFE6;">Tüketiciye</div><div class="m" style="font-size: 8.5px; color: #F5EFE6; opacity: .7; margin-top: 6px;">konuşuyorum</div></div>
+</div>
+</div>
+<div class="m" style="font-size: 10px; color: #8E84A3; margin-top: 14px;">Pazarlama Kulisi video serisi · Instagram'da yakında</div>
 </div>
 </div>
 </section>
