@@ -27,7 +27,8 @@
   }
   var EVT = { onclick: 'click', onmousemove: 'mousemove', oninput: 'input', onchange: 'change', onsubmit: 'submit' };
 
-  function render(node, scopes, out) {
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  function render(node, scopes, out, ns) {
     if (node.nodeType === 3) {
       var t = node.nodeValue;
       if (t.indexOf('{{') >= 0) { var v = interp(t, scopes); out.appendChild(document.createTextNode(v == null ? '' : String(v))); }
@@ -42,16 +43,17 @@
       var as = node.getAttribute('as') || 'item';
       for (var i = 0; i < list.length; i++) {
         var sc = {}; sc[as] = list[i]; sc['$index'] = i;
-        for (var c = node.firstChild; c; c = c.nextSibling) render(c, scopes.concat([sc]), out);
+        for (var c = node.firstChild; c; c = c.nextSibling) render(c, scopes.concat([sc]), out, ns);
       }
       return;
     }
     if (tag === 'sc-if') {
       var cond = lookup(node.getAttribute('value').replace(/[{}]/g, ''), scopes);
-      if (cond) for (var c2 = node.firstChild; c2; c2 = c2.nextSibling) render(c2, scopes, out);
+      if (cond) for (var c2 = node.firstChild; c2; c2 = c2.nextSibling) render(c2, scopes, out, ns);
       return;
     }
-    var el = document.createElement(tag);
+    var isSvg = ns || tag === 'svg';
+    var el = isSvg ? document.createElementNS(SVGNS, node.tagName) : document.createElement(tag);
     var attrs = node.attributes;
     for (var a = 0; a < attrs.length; a++) {
       var name = attrs[a].name, val = attrs[a].value;
@@ -66,7 +68,7 @@
       if (iv === false || iv == null) { if (name === 'aria-pressed' || name === 'aria-expanded') el.setAttribute(name, 'false'); continue; }
       el.setAttribute(name, iv === true ? '' : String(iv));
     }
-    for (var c3 = node.firstChild; c3; c3 = c3.nextSibling) render(c3, scopes, el);
+    for (var c3 = node.firstChild; c3; c3 = c3.nextSibling) render(c3, scopes, el, isSvg && tag !== 'foreignobject');
     out.appendChild(el);
   }
 
