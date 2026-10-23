@@ -82,6 +82,8 @@ input,select,textarea{font-family:inherit}
 @media (prefers-reduced-motion: reduce){.rv,.zoom{animation:none}.ph,.row,.tile{transition:none}}
 .soc{transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease}.soc:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(42,29,74,.5);background:#E85D2A!important;border-color:#E85D2A!important;color:#FFFFFF!important}
 @keyframes hintpulse{0%{box-shadow:0 0 0 0 rgba(232,93,42,.55)}70%{box-shadow:0 0 0 16px rgba(232,93,42,0)}100%{box-shadow:0 0 0 0 rgba(232,93,42,0)}}.hint{animation:hintpulse 2.2s ease-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.55}}.blink{animation:blink 1.8s ease-in-out infinite}
+.epc{transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .3s ease}.epc:hover{transform:translateY(-6px);border-color:#E85D2A;box-shadow:0 20px 40px -20px rgba(232,93,42,.5)}
 .stepc{transition:background .3s ease,transform .3s ease}.stepc:hover{background:#352757!important;transform:translateY(-4px)}.stepc:hover .d:first-child{color:#F5EFE6}
 .infc{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease}
 .infc::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 90% -10%,rgba(232,93,42,.28),transparent 60%);opacity:0;transition:opacity .4s ease;pointer-events:none}
@@ -564,6 +566,29 @@ input,select,textarea{font-family:inherit}
 </div>
 </section>
 
+<section id="kayit" style="background: #211743; color: #F5EFE6; border-top: 1px solid #473867; position: relative; overflow: hidden;">
+<div style="max-width: 1440px; margin: 0 auto; padding: 110px 28px; display: flex; flex-wrap: wrap; gap: 48px 64px; align-items: center;">
+<div class="rv" style="flex: 1 1 380px; min-width: 0; max-width: 520px; display: flex; flex-direction: column; gap: 22px;">
+<div style="display: inline-flex; align-items: center; gap: 10px;"><span class="m" style="font-size: 11px; color: #E85D2A;">06b — Kısa video serisi</span><span class="m blink" style="font-size: 10px; padding: 6px 12px; border-radius: 999px; background: #E85D2A; color: #FFFFFF;">Yakında</span></div>
+<h2 class="d" style="margin: 0; font-weight: 800; font-size: clamp(38px, 5vw, 72px); line-height: 0.98; letter-spacing: -0.04em;">Kulis <span class="gi">kayıtta.</span></h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.55; color: #CFC6DD;">Kampanyaları Pazarlama Kulisi'nde yazıyoruz; burada da kameraya anlatacağız. Bir fikir nasıl doğar, sette ne değişir, rafta ne olur: her bölüm bir dakikada tek bir ders. İlk bölümler Instagram'da yayınlanacak, kayıtlar burada toplanacak.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+<a href="https://www.instagram.com/bektasaysun_/" class="soc" style="display: inline-flex; align-items: center; gap: 9px; padding: 13px 20px 13px 16px; border-radius: 999px; background: #E85D2A; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>İlk bölüm için Instagram'da takipte kalın</a>
+<a href="#abone" style="color: #CFC6DD; text-decoration: none; font-size: 14px; border-bottom: 1px solid #E85D2A;">Bültene haber gelsin</a>
+</div>
+</div>
+<div class="rv" style="flex: 1 1 440px; min-width: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+<sc-for list="{{ episodes }}" as="ep" hint-placeholder-count="4">
+<div class="epc" style="aspect-ratio: 9 / 16; border-radius: 16px; background: linear-gradient(160deg, #352757, #2A1D4A); border: 1px solid #473867; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 14px; margin-top: {{ep.mt}}px;">
+<div class="m" style="font-size: 10px; color: #E85D2A;">Bölüm {{ep.no}}</div>
+<div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(245,239,230,0.35); display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#F5EFE6" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+<div class="d" style="font-weight: 800; font-size: 15px; line-height: 1.1; letter-spacing: -0.02em; color: #F5EFE6;">{{ep.t}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
 <section aria-label="Davetler" style="position: relative; min-height: 540px; overflow: hidden; background: #2A1D4A;">
 <img class="zoom" src="assets/40794f1ec141ad2e0f0dfd652b2c188f.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
 <div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(42,29,74,0.94), rgba(42,29,74,0.4));"></div>
@@ -768,8 +793,10 @@ class Component extends DCLogic {
       { x: (837/12).toFixed(2), t: 'Influencer', r: 'Tavsiye ve kanıt' },
       { x: (1040/12).toFixed(2), t: 'Etkinlik · Raf', r: 'Deneyim ve dönüşüm' }
     ];
+    const episodes = [['01','Fikir nereden doğar?',0],['02','Sette ne değişir?',22],['03','Rafta ne olur?',0],['04','Hangi yüz, neden?',22]].map(([no,t,mt]) => ({ no, t, mt }));
     const steps = [];
     return {
+      episodes,
       trail, onTrail, steps, nodes, media, stats,
       kpiFill: cur === 1 ? '#F5EFE6' : '#8E84A3', insFill: cur === 2 ? '#F5EFE6' : '#8E84A3', kpiBd: cur === 1 ? '#E85D2A' : '#4A3A62', insBd: cur === 2 ? '#E85D2A' : '#4A3A62',
       mediaBd: cur === 3 ? '#E85D2A' : '#473867', mediaSh: cur === 3 ? '0 0 30px rgba(232,93,42,0.25)' : 'none',
