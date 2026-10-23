@@ -62,11 +62,11 @@ img,video{display:block}
 .row:hover{background:rgba(232,93,42,.07);padding-left:12px}
 .ph{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
 .phw:hover .ph{transform:scale(1.04)}
-.btn{transition:background .25s ease,color .25s ease,border-color .25s ease}
-.btn:hover{background:#E85D2A;color:#2A1D4A;border-color:#E85D2A}
-.btng:hover{background:#FFFFFF;border-color:#FFFFFF;color:#2A1D4A}
+.btn,.btng,.btnd{transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease,border-color .25s ease}
+.btn:hover{background:#2A1D4A!important;color:#F5EFE6!important;border-color:#2A1D4A!important;transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(42,29,74,.55)}
+.btng:hover{background:#E85D2A!important;color:#FFFFFF!important;border-color:#E85D2A!important;transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(0,0,0,.4)}
 header nav a{position:relative;padding-bottom:5px;color:#3A2550!important}header nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#E85D2A;transform:scaleX(0);transform-origin:left;transition:transform .25s ease}header nav a:hover::after{transform:scaleX(1)}
-.btnd:hover{background:#2A1D4A;color:#F5EFE6;border-color:#2A1D4A}
+.btnd:hover{background:#E85D2A!important;color:#FFFFFF!important;border-color:#E85D2A!important;transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(42,29,74,.45)}
 input,select,textarea{font-family:inherit}
 .fld{background:transparent;border:0;border-bottom:1px solid #8E84A3;border-radius:0;padding:14px 0;font-size:18px;outline:none}
 .fld:focus{border-bottom-color:#E85D2A}
@@ -107,7 +107,7 @@ input,select,textarea{font-family:inherit}
 <a href="#sosyal" style="color: #4A3A62; text-decoration: none;">Medhouse</a>
 <a href="#kulis" style="color: #4A3A62; text-decoration: none;">Pazarlama Kulisi</a>
 </nav>
-<a href="#gorusme" class="btn m" style="font-size: 11px; background: #E85D2A; border: 1px solid #E85D2A; color: #FFFFFF; padding: 17px 28px; text-decoration: none;">Ön görüşme</a>
+<a href="#gorusme" class="btn m" style="font-size: 12.5px; background: #E85D2A; border: 1px solid #E85D2A; color: #FFFFFF; padding: 17px 28px; text-decoration: none;">Ön görüşme</a>
 </div>
 </header>
 
@@ -125,15 +125,15 @@ input,select,textarea{font-family:inherit}
 <a href="#sosyal" class="m chip" style="font-size: 9.5px; padding: 8px 12px; border-radius: 999px; border: 1px solid #D8CFC2; color: #4A3A62; text-decoration: none;">Sosyal medya</a>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
-<a href="#gorusme" class="btn m" style="padding: 15px 24px; background: #E85D2A; color: #FFFFFF; border: 1px solid #E85D2A; text-decoration: none; font-size: 11px;">Ön görüşme planlayın</a>
-<a href="#yontem" class="btn m" style="padding: 15px 24px; border: 1px solid #3A2550; color: #3A2550; text-decoration: none; font-size: 11px;">Çalışma sistemi ↓</a>
+<a href="#gorusme" class="btn m" style="padding: 15px 24px; background: #E85D2A; color: #FFFFFF; border: 1px solid #E85D2A; text-decoration: none; font-size: 12.5px;">Ön görüşme planlayın</a>
+<a href="#yontem" class="btn m" style="padding: 15px 24px; border: 1px solid #3A2550; color: #3A2550; text-decoration: none; font-size: 12.5px;">Çalışma sistemi ↓</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px; max-width: 560px;">
 <div class="m" style="font-size: 11px; color: #E85D2A;">Pazarlama Kulisi · haftada iki sayı e-postanıza</div>
 <form action="https://formsubmit.co/hello@aysunbektas.com" method="POST" style="display: flex; flex-wrap: wrap; gap: 8px;"><input type="hidden" name="_subject" value="Pazarlama Kulisi aboneliği"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://aysunbektas.com/abone-tesekkurler.html"><input type="text" name="_honey" style="display:none">
 <label for="hero-mail" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">E-posta adresiniz</label>
 <input id="hero-mail" name="E-posta" type="email" required placeholder="e-posta adresiniz" style="flex: 1 1 220px; min-width: 0; height: 46px; padding: 0 18px; border: 1px solid #D8CFC2; background: #FFFFFF; color: #3A2550; border-radius: 4px; font-size: 15px;">
-<button type="submit" class="btng m" style="height: 46px; padding: 0 22px; background: #2A1D4A; border: 1px solid #2A1D4A; color: #F5EFE6; font-size: 11px; cursor: pointer;">Abone olun</button>
+<button type="submit" class="btng m" style="height: 46px; padding: 0 22px; background: #2A1D4A; border: 1px solid #2A1D4A; color: #F5EFE6; font-size: 12.5px; cursor: pointer;">Abone olun</button>
 </form>
 <div style="font-size: 12px; color: #6E5F82;">Kaydolarak <a href="#kvkk" style="color: #4A3A62;">aydınlatma metnini</a> kabul etmiş olursunuz. Tek tıkla çıkış.</div>
 </div>
@@ -365,7 +365,7 @@ input,select,textarea{font-family:inherit}
 </div>
 <div class="rv" style="display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center; border-top: 2px solid #2A1D4A; padding-top: 28px;">
 <p style="margin: 0; flex: 1 1 420px; min-width: 0; font-size: 17px; color: #4A3A62;">Her projede creator seçimi, brief, ürün gönderimi, içerik onayı ve ölçüm tek elden yürütülür; sonuç tek tek paylaşımla değil, kampanya sonunda satışa ve bilinirliğe etkisiyle raporlanır.</p>
-<a href="#gorusme" class="btnd m" style="padding: 18px 28px; border: 1px solid #3A2550; color: #3A2550; text-decoration: none; font-size: 11px;">ınfluencer stratejisi için görüşelim</a>
+<a href="#gorusme" class="btnd m" style="padding: 18px 28px; border: 1px solid #3A2550; color: #3A2550; text-decoration: none; font-size: 12.5px;">ınfluencer stratejisi için görüşelim</a>
 </div>
 </div>
 </div>
@@ -411,7 +411,7 @@ input,select,textarea{font-family:inherit}
 
 <div class="rv" style="display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: center; border-top: 1px solid #473867; padding-top: 28px;">
 <p class="d" style="margin: 0; flex: 1 1 420px; min-width: 0; font-weight: 600; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.3; letter-spacing: -0.015em;">Hedef, "yurt dışından gelen alıyor" cümlesini rafta ve e-ticarette ölçülebilir satışa çevirmek: <span class="gi">iki kitleye tek ekosistem.</span></p>
-<a href="#gorusme" class="btn m" style="padding: 18px 28px; background: #E85D2A; color: #3A2550; border: 1px solid #E85D2A; text-decoration: none; font-size: 11px;">Sınır ötesi plan için görüşelim</a>
+<a href="#gorusme" class="btn m" style="padding: 18px 28px; background: #E85D2A; color: #3A2550; border: 1px solid #E85D2A; text-decoration: none; font-size: 12.5px;">Sınır ötesi plan için görüşelim</a>
 </div>
 </div>
 </section>
@@ -442,8 +442,8 @@ input,select,textarea{font-family:inherit}
 </sc-for>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-<a href="#gorusme" class="btng m" style="padding: 18px 28px; background: #E85D2A; border: 1px solid #E85D2A; color: #3A2550; text-decoration: none; font-size: 11px; font-weight: 500;">Ön görüşme talep edin</a>
-<a href="marketing-lab.html" class="btn m" style="padding: 18px 28px; border: 1px solid #4A3A62; color: #F5EFE6; text-decoration: none; font-size: 11px;">Hizmet haritası</a>
+<a href="#gorusme" class="btng m" style="padding: 18px 28px; background: #E85D2A; border: 1px solid #E85D2A; color: #3A2550; text-decoration: none; font-size: 12.5px; font-weight: 500;">Ön görüşme talep edin</a>
+<a href="marketing-lab.html" class="btn m" style="padding: 18px 28px; border: 1px solid #4A3A62; color: #F5EFE6; text-decoration: none; font-size: 12.5px;">Hizmet haritası</a>
 </div>
 </div>
 </div>
@@ -458,14 +458,14 @@ input,select,textarea{font-family:inherit}
 <p class="rv" style="margin: 0; font-size: 18px; color: #4A3A62;">Tüketici odaklı, ilgi çeken, fayda sağlayan ve kalbe dokunan bir hesap: önce strateji oturtulur, hesap sağlıklı bir düzende yönetilir, markaya özel kreatif projeler üretilir. Üretim ve günlük yönetim, sosyal medya ekibimiz <b style="font-weight: 600;">Medhouse</b> tarafından yürütülür.</p>
 <p class="rv" style="margin: 0; font-size: 18px; color: #4A3A62;">Influencer ekosisteminde her ismin kimyası bilinir: kim hangi kitleye, hangi tonda, hangi güvenle konuşur. Hedefe uygun sesler projeye dahil edilir; topluluk yönetimi sahada, bizzat yürütülür.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-<a href="#gorusme" class="btnd m" style="padding: 18px 28px; border: 1px solid #3A2550; color: #3A2550; text-decoration: none; font-size: 11px;">Sosyal medya için görüşelim</a>
-<a href="https://www.instagram.com/medhouseajans/" class="btnd m" style="padding: 18px 28px; border: 1px solid rgba(42,29,74,0.35); color: #3A2550; text-decoration: none; font-size: 11px;">Medhouse ↗</a>
+<a href="#gorusme" class="btnd m" style="padding: 18px 28px; border: 1px solid #3A2550; color: #3A2550; text-decoration: none; font-size: 12.5px;">Sosyal medya için görüşelim</a>
+<a href="https://www.instagram.com/medhouseajans/" class="btnd m" style="padding: 18px 28px; border: 1px solid rgba(42,29,74,0.35); color: #3A2550; text-decoration: none; font-size: 12.5px;">Medhouse ↗</a>
 </div>
 </div>
-<div style="flex: 1 1 320px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;">
+<div style="flex: 1 1 420px; min-width: 0; max-width: 520px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 14px;">
 <sc-for list="{{ socialStats }}" as="ss" hint-placeholder-count="4">
 <div class="tile" style="border-radius: 18px; padding: 26px 22px; background: {{ss.bg}}; color: {{ss.fg}}; border: 1px solid {{ss.bd}}; display: flex; flex-direction: column; gap: 12px; min-height: 170px; justify-content: space-between; opacity: {{ss.op}}; transform: translateY({{ss.ty}}px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1);">
-<div class="d" style="font-weight: 800; font-size: clamp(44px, 4.4vw, 72px); line-height: 0.95; letter-spacing: -0.05em; color: {{ss.num}}; font-variant-numeric: tabular-nums;">{{ss.v}}</div>
+<div class="d" style="font-weight: 800; font-size: clamp(34px, 3.2vw, 54px); line-height: 0.95; letter-spacing: -0.04em; color: {{ss.num}}; font-variant-numeric: tabular-nums; white-space: nowrap;">{{ss.v}}</div>
 <div style="display: flex; flex-direction: column; gap: 10px;">
 <div style="font-size: 15px; line-height: 1.35; opacity: 0.85;">{{ss.l}}</div>
 <div style="height: 6px; border-radius: 999px; background: {{ss.track}}; overflow: hidden;"><div style="height: 100%; width: {{ss.w}}%; background: {{ss.num}}; border-radius: 999px; transition: width 1.8s cubic-bezier(.2,.8,.2,1);"></div></div>
@@ -489,8 +489,8 @@ input,select,textarea{font-family:inherit}
 <a href="kulis/herkes-ayni-seyi-optimize-ederken.html" class="d" style="font-weight: 800; font-size: clamp(30px, 3.6vw, 52px); line-height: 1; letter-spacing: -0.035em; color: #F5EFE6; text-decoration: none;">Herkes aynı şeyi optimize ederken <span style="font-style: italic; color: #2A1D4A;">fark yaratanlar</span> ne yapıyor?</a>
 <span style="font-size: 18px; line-height: 1.55; color: #FFF3EA; max-width: 560px;">Onlarca yerli ve yabancı pazarlama bülteninden süzülen 8 ders: yapay zekâ listelerinde tanıdık markanın gücü, creator formatını büyütmek, hiçbir şey satmayan mağaza ve ünlü yerine üç yıl yaşayacak içgörü.</span>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
-<a href="kulis/herkes-ayni-seyi-optimize-ederken.html" class="btn m" style="padding: 16px 24px; background: #2A1D4A; color: #FFF3EA; border: 1px solid #2A1D4A; text-decoration: none; font-size: 11px;">Sitede oku →</a>
-<a href="https://www.linkedin.com/pulse/herkes-ayn%C4%B1-%C5%9Feyi-optimize-ederken-fark-yaratanlar-ne-yap%C4%B1yor-bekta%C5%9F-g4nhf/" class="btn m" style="padding: 16px 24px; border: 1px solid #2A1D4A; color: #2A1D4A; text-decoration: none; font-size: 11px;">LinkedIn'de oku ↗</a>
+<a href="kulis/herkes-ayni-seyi-optimize-ederken.html" class="btn m" style="padding: 16px 24px; background: #2A1D4A; color: #FFF3EA; border: 1px solid #2A1D4A; text-decoration: none; font-size: 12.5px;">Sitede oku →</a>
+<a href="https://www.linkedin.com/pulse/herkes-ayn%C4%B1-%C5%9Feyi-optimize-ederken-fark-yaratanlar-ne-yap%C4%B1yor-bekta%C5%9F-g4nhf/" class="btn m" style="padding: 16px 24px; border: 1px solid #2A1D4A; color: #2A1D4A; text-decoration: none; font-size: 12.5px;">LinkedIn'de oku ↗</a>
 </div>
 </div>
 <div class="phw" style="flex: 1 1 380px; min-width: 0; min-height: 360px; position: relative; overflow: hidden; background: #2A1D4A;">
@@ -523,7 +523,7 @@ input,select,textarea{font-family:inherit}
 <label for="kulis-mail" class="m" style="font-size: 11px; color: #E85D2A;">Kulise katılın · haftada iki sayı, e-postanıza</label>
 <input id="kulis-mail" name="E-posta" type="email" required placeholder="e-posta adresiniz" class="fld" style="color: #F5EFE6;">
 </div>
-<button type="submit" class="btng m" style="padding: 18px 28px; background: #E85D2A; border: 1px solid #E85D2A; color: #F5EFE6; font-size: 11px; font-weight: 500; cursor: pointer;">Abone olun</button>
+<button type="submit" class="btng m" style="padding: 18px 28px; background: #E85D2A; border: 1px solid #E85D2A; color: #F5EFE6; font-size: 12.5px; font-weight: 500; cursor: pointer;">Abone olun</button>
 <label style="flex: 1 1 100%; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #B3A8C6; max-width: 760px; cursor: pointer;">
 <input type="checkbox" name="KVKK onayı" value="Evet" required style="margin-top: 3px; accent-color: #F5EFE6;">
 <span>Pazarlama Kulisi bültenine abone olmak ve e-posta ile bilgilendirilmek istiyorum. E-posta adresimin bülten gönderimi amacıyla, yurt dışında barındırılan bülten servisinde (Beehiiv Inc., ABD) saklanmasına açık rıza veriyorum. <a href="#kvkk" style="color: #F5EFE6;">Aydınlatma metni</a> · Her e-postada tek tıkla çıkış.</span>
@@ -552,7 +552,7 @@ input,select,textarea{font-family:inherit}
 <p class="rv" style="margin: 0;">Umarım okurken bazen "Bunu bilmiyordum", bazen "Ben de böyle düşünüyorum", bazen de "Bence başka bir açıklaması var" dersiniz. O sonuncusunu özellikle duymak isterim.</p>
 <div class="rv" style="display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; padding-top: 10px;">
 <span class="d" style="font-weight: 800; font-style: italic; font-size: 34px; letter-spacing: -0.03em; color: #C9481A;">Aysun</span>
-<a href="https://www.linkedin.com/newsletters/pazarlama-kulisi-7474828629068308480/" class="btnd m" style="padding: 16px 24px; border: 1px solid #3A2550; color: #3A2550; text-decoration: none; font-size: 11px;">Bültene abone olun ↗</a>
+<a href="https://www.linkedin.com/newsletters/pazarlama-kulisi-7474828629068308480/" class="btnd m" style="padding: 16px 24px; border: 1px solid #3A2550; color: #3A2550; text-decoration: none; font-size: 12.5px;">Bültene abone olun ↗</a>
 </div>
 </div>
 </div>
@@ -566,7 +566,7 @@ input,select,textarea{font-family:inherit}
 <div class="m" style="font-size: 11px; color: #E85D2A;">Lansmanlar · iş birlikleri · etkinlikler</div>
 <h2 class="d" style="margin: 0; max-width: 720px; font-weight: 800; font-size: clamp(34px, 4.6vw, 68px); line-height: 1; letter-spacing: -0.04em;">Ürününüzü <span class="gi">sahneye</span> birlikte çıkaralım.</h2>
 <p style="margin: 0; max-width: 600px; font-size: 18px; color: #CFC6DD;">Yalıda basın lansmanından moda haftası kulisine kadar onlarca etkinlik ev sahibi olarak kuruldu. Lansman davetleri, creator iş birlikleri ve marka etkinlikleri için kapı açık.</p>
-<a href="#gorusme" class="btn m" style="align-self: flex-start; padding: 18px 28px; border: 1px solid #F5EFE6; color: #F5EFE6; text-decoration: none; font-size: 11px;">Davet gönderin</a>
+<a href="#gorusme" class="btn m" style="align-self: flex-start; padding: 18px 28px; border: 1px solid #F5EFE6; color: #F5EFE6; text-decoration: none; font-size: 12.5px;">Davet gönderin</a>
 </div>
 </section>
 
@@ -583,7 +583,7 @@ input,select,textarea{font-family:inherit}
 <div style="border-top: 2px solid #2A1D4A; padding-top: 32px; display: flex; flex-direction: column; gap: 14px;">
 <div class="m" style="font-size: 11px; color: #C9481A;">Talebiniz ulaştı</div>
 <p class="d" style="margin: 0; font-weight: 800; font-size: clamp(26px, 3vw, 42px); line-height: 1; letter-spacing: -0.035em;">Teşekkürler. En kısa sürede hello@aysunbektas.com adresinden dönüş yapılacak.</p>
-<button type="button" onClick="{{ resetForm }}" class="btnd m" style="align-self: flex-start; padding: 16px 24px; background: transparent; border: 1px solid #3A2550; color: #3A2550; font-size: 11px; cursor: pointer;">Yeni talep</button>
+<button type="button" onClick="{{ resetForm }}" class="btnd m" style="align-self: flex-start; padding: 16px 24px; background: transparent; border: 1px solid #3A2550; color: #3A2550; font-size: 12.5px; cursor: pointer;">Yeni talep</button>
 </div>
 </sc-if>
 <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
@@ -614,7 +614,7 @@ input,select,textarea{font-family:inherit}
 </div>
 </fieldset>
 <div style="display: flex; flex-direction: column;"><label for="f-not" class="m" style="font-size: 10px; color: #6E5F82;">İhtiyacınız</label><textarea id="f-not" name="İhtiyaç" rows="3" class="fld" style="resize: vertical; color: #3A2550;" placeholder="Markanız nerede duruyor, nereye gitmek istiyor, önünde ne var?"></textarea></div>
-<button type="submit" class="btng m" style="align-self: flex-start; padding: 20px 32px; background: #2A1D4A; border: 1px solid #2A1D4A; color: #F5EFE6; font-size: 11px; font-weight: 500; cursor: pointer;">Ön görüşme talep edin →</button>
+<button type="submit" class="btng m" style="align-self: flex-start; padding: 20px 32px; background: #2A1D4A; border: 1px solid #2A1D4A; color: #F5EFE6; font-size: 12.5px; font-weight: 500; cursor: pointer;">Ön görüşme talep edin →</button>
 <p style="margin: 8px 0 0; font-size: 14px; color: #6E5F82;">Ya da doğrudan yazın: <a href="mailto:hello@aysunbektas.com?subject=%C3%96n%20g%C3%B6r%C3%BC%C5%9Fme" style="color: #3A2550; border-bottom: 1px solid #E85D2A; text-decoration: none;">hello@aysunbektas.com</a></p>
 </form>
 </sc-if>
@@ -630,7 +630,7 @@ input,select,textarea{font-family:inherit}
 <h2 class="d" style="margin: 0; font-weight: 800; font-size: 42px; line-height: 1; letter-spacing: -0.04em;">Kulise <span class="gi" style="color: #C9481A;">hoş geldiniz.</span></h2>
 <p style="margin: 0; font-size: 17px; color: #4A3A62;">Hoş geldin notunuz yola çıktı. Yanıtlayıp kendinizi anlatırsanız sevinirim: hangi markada, hangi derdin peşindesiniz? Yeni yazılar bültenle e-postanıza gelecek.</p>
 <span class="d" style="font-weight: 800; font-style: italic; font-size: 36px; letter-spacing: -0.03em; color: #C9481A;">Aysun</span>
-<button type="button" onClick="{{ closeThanks }}" class="btnd m" style="align-self: flex-start; padding: 16px 24px; background: transparent; border: 1px solid #3A2550; color: #3A2550; font-size: 11px; cursor: pointer;">Siteye dön</button>
+<button type="button" onClick="{{ closeThanks }}" class="btnd m" style="align-self: flex-start; padding: 16px 24px; background: transparent; border: 1px solid #3A2550; color: #3A2550; font-size: 12.5px; cursor: pointer;">Siteye dön</button>
 </div>
 </div>
 </div>
