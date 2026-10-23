@@ -100,8 +100,8 @@
       var el = e.target;
       while (el && el !== root) {
         if (el._h && el._h[type]) {
-          var shim = Object.create(e, { currentTarget: { value: el } });
-          el._h[type].call(el, shim);
+          try { Object.defineProperty(e, 'currentTarget', { value: el, configurable: true }); } catch (err) {}
+          try { el._h[type].call(el, e); } finally { try { delete e.currentTarget; } catch (err) {} }
           if (type === 'click') break;
         }
         el = el.parentNode;
