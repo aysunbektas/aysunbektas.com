@@ -87,7 +87,7 @@ input,select,textarea{font-family:inherit}
 @keyframes spotbreathe{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.06);opacity:1}}.spot{animation:spotbreathe 5s ease-in-out infinite}
 @keyframes tagfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}.tagf{animation:tagfloat 4s ease-in-out infinite;animation-delay:var(--d)}
 .stagep{transition:transform .6s ease}section:hover .stagep{transform:scale(1.02)}
-@media (max-width:900px){.tagf{display:none}.stagep{opacity:.35}}
+@media (max-width:900px){.tagf{display:none}}
 .stepc{transition:background .3s ease,transform .3s ease}.stepc:hover{background:#352757!important;transform:translateY(-4px)}.stepc:hover .d:first-child{color:#F5EFE6}
 .infc{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease}
 .infc::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 90% -10%,rgba(232,93,42,.28),transparent 60%);opacity:0;transition:opacity .4s ease;pointer-events:none}
@@ -96,10 +96,62 @@ input,select,textarea{font-family:inherit}
 .infc:hover::before{opacity:1}.infc:hover::after{transform:scaleX(1)}
 .infc .d{transition:transform .35s ease}.infc:hover .d{transform:translateX(4px)}
 @media (max-width:900px){.inf-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media (max-width:560px){.inf-grid{grid-template-columns:1fr!important}}
+
+/* ---------- Mobile ---------- */
+.mnav,.mob-only,.mob-i{display:none}
+.mnav summary{list-style:none;cursor:pointer;width:44px;height:44px;border-radius:12px;border:1px solid #D8CFC2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary span{display:block;width:18px;height:2px;background:#2A1D4A;border-radius:2px;transition:transform .25s ease,opacity .25s ease}
+.mnav[open] summary span:nth-child(1){transform:translateY(7px) rotate(45deg)}.mnav[open] summary span:nth-child(2){opacity:0}.mnav[open] summary span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mnav-panel{position:absolute;left:0;right:0;top:100%;background:#F5EFE6;border-bottom:1px solid #E0D6C8;box-shadow:0 30px 40px -20px rgba(42,29,74,.35);padding:10px 20px 22px;display:flex;flex-direction:column}
+.mnav-panel>a{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.02em;color:#2A1D4A!important;text-decoration:none;padding:12px 0;border-bottom:1px solid #E0D6C8}
+.mnav-panel .mnav-cta{margin-top:16px;border:0;background:#E85D2A;color:#FFFFFF!important;text-align:center;border-radius:999px;font-size:16px;padding:16px}
+.mnav-soc{display:flex;gap:18px;margin-top:14px}.mnav-soc a{font-size:14px;color:#2A1D4A!important;text-decoration:none;border-bottom:1px solid #E85D2A}
+.mob-steps{display:flex;flex-direction:column;gap:8px;position:relative}
+.mob-steps:before{content:"";position:absolute;left:22px;top:10px;bottom:10px;border-left:2px dashed #E85D2A;opacity:.5}
+.mstep{position:relative;display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 16px;border-radius:14px;font-family:inherit;cursor:pointer;transition:transform .25s ease,background .25s ease}
+.mstep[aria-pressed="true"]{transform:translateX(6px);box-shadow:0 0 30px rgba(232,93,42,.35)}
+@media (max-width:760px){
+ .mob-only{display:block}.desk-only{display:none!important}.mob-i{display:inline}.desk-i{display:none}
+ header>div{padding:12px 16px 10px!important;gap:10px!important;flex-wrap:nowrap!important;position:relative}
+ header nav{display:none!important}
+ header .logo span.d{font-size:21px!important}header .logo span.m{font-size:8.5px!important;letter-spacing:.18em!important}
+ header .hcta{padding:11px 14px!important;font-size:10px!important;margin-left:auto;white-space:nowrap}
+ .mnav{display:block}
+ [style*="padding: 140px 28px;"],[style*="padding: 130px 28px;"],[style*="padding: 120px 28px;"],[style*="padding: 110px 28px;"]{padding:64px 20px!important}
+ [style*="padding: 140px 28px 40px"]{padding:64px 20px 20px!important}
+ [style*="padding: 120px 28px 48px"]{padding:64px 20px 28px!important}
+ [style*="padding: 0 28px 120px"]{padding:0 20px 64px!important}
+ [style*="padding: 0 28px 140px"]{padding:0 20px 64px!important}
+ [style*="padding: 400px 28px 64px"]{padding:220px 20px 36px!important}
+ section[aria-label="Set arkası"]{min-height:0!important}
+ .hero-wrap{padding:22px 20px 0!important;min-height:0!important;gap:18px!important}
+ .hero-tx{gap:12px!important;padding-bottom:0!important}
+ .hero-tx .btn{padding:14px 16px!important;font-size:10.5px!important}
+ .hero-ph{min-height:0!important;height:440px;margin:0 -20px!important;flex:1 1 100%!important}
+ .stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:0 8px!important}
+ .stat-grid>a{padding:22px 14px!important}
+ #kulis-dunyasi{min-height:72vh!important}
+ #kulis-dunyasi img{width:150px!important;height:196px!important;margin:40px 0 0 40px}
+ .hint{font-size:10.5px!important;padding:10px 16px!important}
+ .yon-ph{min-height:420px!important;margin-top:0!important}
+ .bento{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .bento .tile{min-height:140px!important;padding:16px!important}
+ .bento .tile .d{font-size:28px!important}.bento .tile.s2 .d{font-size:44px!important}
+ .vid-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .ep-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .ep-grid .epc{margin-top:0!important}
+ .davet{display:flex;flex-direction:column;min-height:0!important}
+ .davet>div[style*="position: relative"]{order:1;padding:64px 20px 20px!important}
+ .davet .stagep{position:relative!important;right:auto!important;order:2;height:auto!important;width:82%!important;max-width:none!important;margin:0 auto;display:block}
+ .davet .spot{right:-10%!important;width:110vw!important;bottom:-10%!important}
+ .form-ph{display:none!important}
+ h2.d{overflow-wrap:break-word}
+}
 </style>
 <style>#dc-root[hidden]{display:none}</style>
-<script src="morphdom.min.js?v=da879521"></script>
-<script src="dc.js?v=da879521"></script>
+<script src="morphdom.min.js?v=7938bcf7"></script>
+<script src="dc.js?v=7938bcf7"></script>
 </head>
 <body>
 <div id="dc-root" hidden></div>
@@ -108,7 +160,7 @@ input,select,textarea{font-family:inherit}
 
 <header style="position: sticky; top: 0; z-index: 20; background: rgba(245,239,230,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid #E0D6C8; box-shadow: inset 0 3px 0 #E85D2A;">
 <div style="max-width: 1440px; margin: 0 auto; padding: 30px 32px 26px; display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: space-between; align-items: center;">
-<a href="#top" style="display: flex; flex-direction: column; gap: 5px; text-decoration: none; color: #3A2550;"><span class="d" style="font-size: 30px; font-weight: 800; letter-spacing: -0.035em; line-height: 1;">Aysun Bektaş<span class="dot" style="color: #E85D2A;">.</span></span><span class="m" style="font-size: 10.5px; letter-spacing: 0.24em; color: #C9481A;">Pazarlama ekosistemi mimarı</span></a>
+<a href="#top" class="logo" style="display: flex; flex-direction: column; gap: 5px; text-decoration: none; color: #3A2550;"><span class="d" style="font-size: 30px; font-weight: 800; letter-spacing: -0.035em; line-height: 1;">Aysun Bektaş<span class="dot" style="color: #E85D2A;">.</span></span><span class="m" style="font-size: 10.5px; letter-spacing: 0.24em; color: #C9481A;">Pazarlama ekosistemi mimarı</span></a>
 <nav aria-label="Ana menü" class="d" style="display: flex; flex-wrap: wrap; gap: 8px 2px; font-size: clamp(14px, 1.15vw, 17px); font-weight: 600; letter-spacing: -0.01em;">
 <a href="#yontem" style="color: #4A3A62; text-decoration: none;">Yöntem</a>
 <a href="#projeler" style="color: #4A3A62; text-decoration: none;">Projeler</a>
@@ -117,13 +169,20 @@ input,select,textarea{font-family:inherit}
 <a href="#sosyal" style="color: #4A3A62; text-decoration: none;">Medhouse</a>
 <a href="#kulis" style="color: #4A3A62; text-decoration: none;">Pazarlama Kulisi</a>
 </nav>
-<a href="#gorusme" class="btn m" style="font-size: 12.5px; background: #E85D2A; border: 1px solid #E85D2A; color: #FFFFFF; padding: 17px 28px; text-decoration: none;">Ön görüşme</a>
+<a href="#gorusme" class="btn m hcta" style="font-size: 12.5px; background: #E85D2A; border: 1px solid #E85D2A; color: #FFFFFF; padding: 17px 28px; text-decoration: none;">Ön görüşme</a>
+<details class="mnav"><summary aria-label="Menü"><span></span><span></span><span></span></summary>
+<div class="mnav-panel">
+<a href="#yontem">Yöntem</a><a href="#projeler">Projeler</a><a href="#influencer">Influencer</a><a href="marketing-lab.html">Marketing Lab</a><a href="#sosyal">Medhouse</a><a href="#kulis">Pazarlama Kulisi</a>
+<a href="#gorusme" class="mnav-cta">Ön görüşme planlayın →</a>
+<div class="mnav-soc"><a href="https://www.linkedin.com/in/bektasaysun/">LinkedIn ↗</a><a href="https://www.instagram.com/bektasaysun_/">Instagram ↗</a></div>
+</div>
+</details>
 </div>
 </header>
 
 <section id="top" class="lt" style="position: relative; overflow: hidden; background: #F5EFE6; color: #3A2550;">
-<div style="max-width: 1440px; margin: 0 auto; padding: 28px 28px 0; min-height: min(760px, calc(100vh - 104px)); display: flex; flex-wrap: wrap; gap: 32px 28px; align-items: stretch;">
-<div style="flex: 1 1 420px; min-width: 0; max-width: 600px; display: flex; flex-direction: column; justify-content: flex-start; gap: 12px; padding-bottom: 20px;">
+<div class="hero-wrap" style="max-width: 1440px; margin: 0 auto; padding: 28px 28px 0; min-height: min(760px, calc(100vh - 104px)); display: flex; flex-wrap: wrap; gap: 32px 28px; align-items: stretch;">
+<div class="hero-tx" style="flex: 1 1 420px; min-width: 0; max-width: 600px; display: flex; flex-direction: column; justify-content: flex-start; gap: 12px; padding-bottom: 20px;">
 <h1 class="d" style="margin: 0; color: #3A2550; font-weight: 800; font-size: clamp(40px, 4.6vw, 72px); line-height: 0.96; letter-spacing: -0.04em;">Herkes aynı şeyi anlatırken <span class="gi">sesi duyulan</span> markaları kuran pazarlamacı.</h1>
 <div style="display: flex; flex-wrap: wrap; gap: 8px; max-width: 620px; margin-top: 18px;">
 <a href="#yontem" class="m chip" style="font-size: 9.5px; padding: 8px 12px; border-radius: 999px; border: 1px solid #D8CFC2; color: #4A3A62; text-decoration: none;">Marka stratejisi</a>
@@ -150,14 +209,14 @@ input,select,textarea{font-family:inherit}
 <a href="https://www.instagram.com/bektasaysun_/" class="soc" style="display: inline-flex; align-items: center; gap: 9px; padding: 11px 18px 11px 14px; border-radius: 999px; border: 1.5px solid #2A1D4A; color: #2A1D4A; text-decoration: none; font-size: 14px; font-weight: 600;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>Instagram</a>
 </div>
 </div>
-<div style="flex: 1.4 1 520px; min-width: 0; max-width: 900px; margin-left: auto; align-self: stretch; position: relative; min-height: 520px; margin-top: 2px; display: flex; align-items: flex-end; justify-content: center;">
+<div class="hero-ph" style="flex: 1.4 1 520px; min-width: 0; max-width: 900px; margin-left: auto; align-self: stretch; position: relative; min-height: 520px; margin-top: 2px; display: flex; align-items: flex-end; justify-content: center;">
 <img src="assets/c8a4811113e671c013b5b28b96175f62.webp" alt="Aysun Bektaş" style="display: block; height: 100%; width: 100%; object-fit: cover; object-position: center top;">
 </div>
 </div>
 </section>
 
 <div id="rakam-seridi" aria-label="Öne çıkan rakamlar" style="background: #E85D2A; color: #FFF3EA;">
-<div style="max-width: 1440px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+<div class="stat-grid" style="max-width: 1440px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
 <sc-for list="{{ stats }}" as="st" hint-placeholder-count="8">
 <a href="{{st.href}}" style="display: block; color: inherit; text-decoration: none; padding: 32px 24px; border-right: 1px solid rgba(255,243,234,0.28); border-bottom: 1px solid rgba(255,243,234,0.28); opacity: {{st.op}}; transform: translateY({{st.ty}}px);">
 <div class="d" style="font-weight: 800; font-size: clamp(48px, 4.6vw, 68px); line-height: 1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums;">{{st.v}}</div>
@@ -170,7 +229,7 @@ input,select,textarea{font-family:inherit}
 </div>
 </div>
 
-<section id="kulis-dunyasi" aria-label="Set ve kulis" onMouseMove="{{ onTrail }}" style="position: relative; min-height: 86vh; overflow: hidden; background: #211743; border-top: 1px solid #473867; border-bottom: 1px solid #473867; cursor: crosshair; display: flex; align-items: center; justify-content: center; background-image: radial-gradient(#473867 1px, transparent 1px); background-size: 28px 28px;">
+<section id="kulis-dunyasi" aria-label="Set ve kulis" onMouseMove="{{ onTrail }}" onTouchMove="{{ onTrail }}" style="position: relative; min-height: 86vh; overflow: hidden; background: #211743; border-top: 1px solid #473867; border-bottom: 1px solid #473867; cursor: crosshair; display: flex; align-items: center; justify-content: center; background-image: radial-gradient(#473867 1px, transparent 1px); background-size: 28px 28px;">
 <sc-for list="{{ trail }}" as="t" hint-placeholder-count="0">
 <img src="{{t.src}}" alt="" aria-hidden="true" style="position: absolute; left: {{t.left}}px; top: {{t.top}}px; width: 230px; height: 300px; object-fit: cover; opacity: {{t.op}}; transform: rotate({{t.rot}}deg); border: 4px solid #F5EFE6; border-radius: 8px; box-sizing: border-box; pointer-events: none;">
 </sc-for>
@@ -178,7 +237,7 @@ input,select,textarea{font-family:inherit}
 <div class="m" style="font-size: 11px; color: #E85D2A;">Kulis · set · sahne</div>
 <h2 class="d shimmer" style="margin: 0; font-weight: 800; font-size: clamp(40px, 6vw, 96px); line-height: 0.98; letter-spacing: -0.045em; color: #F5EFE6;">Fikrin sete, setin rafa taşındığı yer.</h2>
 <p style="margin: 0; max-width: 620px; font-size: 18px; color: #CFC6DD;">Brief'i yazan, senaryoyu kuran, monitörün başında doğru kareyi seçen marka tarafı. Her projenin kulisinden kareler.</p>
-<div class="hint m" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 12px 20px; border-radius: 999px; background: #E85D2A; color: #FFFFFF; font-size: 12px; box-shadow: 0 0 0 0 rgba(232,93,42,0.6);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l14 8-6 2-3 6z"/></svg>Kulise göz atın · imlecinizi alanda gezdirin</div>
+<div class="hint m" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 12px 20px; border-radius: 999px; background: #E85D2A; color: #FFFFFF; font-size: 12px; box-shadow: 0 0 0 0 rgba(232,93,42,0.6);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l14 8-6 2-3 6z"/></svg><span class="desk-i">Kulise göz atın · imlecinizi alanda gezdirin</span><span class="mob-i">Kulise göz atın · kareler kendiliğinden açılıyor</span></div>
 </div>
 </section>
 
@@ -190,10 +249,10 @@ input,select,textarea{font-family:inherit}
 <p class="rv" style="margin: 0; max-width: 640px; font-size: 19px; color: #CFC6DD;">Her iş brief'le değil teşhisle başlar: markanın pazar konumu, kategori dinamikleri ve büyüme engeli tek oturumda haritalanır. İş hedefi ölçülebilir bir pazarlama hedefine çevrilir; strateji bu hedefe göre kurulur, her mecra bir görev üstlenir.</p>
 <p class="rv" style="margin: 0; max-width: 640px; font-size: 19px; color: #CFC6DD;">Satış hedefinde dönüşüm, tekrar satın alma ve yatırım getirisi; bilinirlik hedefinde hedef kitle penetrasyonu, yardımsız hatırlanma, dikkate alma seti ve markalı arama hacmi konuşulur. Göstergeler bütçeyle birlikte imzalanır, bütçe performansa göre her ay yeniden dağıtılır. <b style="font-weight: 600; color: #F5EFE6;">Aysun Bektaş'ın çalışma sistemi budur.</b></p>
 </div>
-<div class="rv" style="flex: 1 1 460px; min-width: 0; max-width: 760px; margin-left: auto; position: relative; min-height: 560px; margin-top: 42px; margin-bottom: -40px; overflow: hidden;"><img src="assets/29dddeeda645e053e839f6573ebc8f85.webp" alt="Aysun Bektaş" style="position: absolute; left: 50%; top: 0; height: 118%; width: auto; max-width: none; transform: translateX(-50%); filter: drop-shadow(0 30px 50px rgba(0,0,0,0.5));"></div>
+<div class="rv yon-ph" style="flex: 1 1 460px; min-width: 0; max-width: 760px; margin-left: auto; position: relative; min-height: 560px; margin-top: 42px; margin-bottom: -40px; overflow: hidden;"><img src="assets/29dddeeda645e053e839f6573ebc8f85.webp" alt="Aysun Bektaş" style="position: absolute; left: 50%; top: 0; height: 118%; width: auto; max-width: none; transform: translateX(-50%); filter: drop-shadow(0 30px 50px rgba(0,0,0,0.5));"></div>
 </div>
 
-<div style="max-width: 1440px; margin: 0 auto; padding: 0 28px 48px; overflow-x: auto;">
+<div class="desk-only" style="max-width: 1440px; margin: 0 auto; padding: 0 28px 48px; overflow-x: auto;">
 <div style="position: relative; min-width: 980px; aspect-ratio: 1200 / 640; background: #211743; border: 1px solid #473867; border-radius: 20px; background-image: radial-gradient(#473867 1px, transparent 1px); background-size: 28px 28px;">
 <svg viewBox="0 0 1200 640" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible;">
 <defs>
@@ -266,6 +325,21 @@ input,select,textarea{font-family:inherit}
 </div>
 </div>
 
+<div class="mob-only" style="max-width: 1440px; margin: 0 auto; padding: 0 20px 28px;">
+<div class="m" style="font-size: 10px; color: #8E84A3; margin-bottom: 12px;">Girdi → kurgu → çıktı · adımlara dokunun</div>
+<div class="mob-steps">
+<sc-for list="{{ nodes }}" as="n" hint-placeholder-count="5">
+<button type="button" onClick="{{ n.pick }}" aria-pressed="{{n.sel}}" class="mstep" style="background: {{n.bg}}; color: {{n.fg}}; border: 1px solid {{n.bd}};"><span class="m" style="font-size: 10px; opacity: 0.8;">{{n.k}}</span><span class="d" style="font-weight: 800; font-size: 18px; letter-spacing: -0.02em;">{{n.t}}</span></button>
+</sc-for>
+</div>
+<div class="m" style="font-size: 10px; color: #E85D2A; margin: 18px 0 10px;">Mecra rolleri</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+<sc-for list="{{ media }}" as="c" hint-placeholder-count="5">
+<div style="background: #211743; border: 1px solid #473867; border-radius: 10px; padding: 12px;"><div class="d" style="font-weight: 800; font-size: 15px; color: #F5EFE6;">{{c.t}}</div><div style="font-size: 12px; color: #B3A8C6;">{{c.r}}</div></div>
+</sc-for>
+</div>
+<div style="margin-top: 12px; border: 1px solid #E85D2A; border-radius: 12px; padding: 14px; text-align: center;"><div class="m" style="font-size: 9.5px; color: #B3A8C6; line-height: 1.8;">Erişim → etkileşim → trafik → satış → tekrar satın alma</div><div class="m" style="font-size: 9px; color: #E85D2A; margin-top: 6px; line-height: 1.7;">İşe yarayan büyütülür · yaramayan kapatılır</div></div>
+</div>
 <div style="max-width: 1440px; margin: 0 auto; padding: 0 28px 120px;">
 <div style="border-left: 2px solid #E85D2A; padding: 8px 0 8px 28px; display: flex; flex-wrap: wrap; gap: 12px 48px; align-items: baseline;">
 <div class="m" style="font-size: 11px; color: #E85D2A; flex: 0 0 auto;">{{ nodeK }}</div>
@@ -288,9 +362,9 @@ input,select,textarea{font-family:inherit}
 <sc-for list="{{ bentoGroups }}" as="g" hint-placeholder-count="4">
 <div class="rv" style="display: flex; flex-direction: column; gap: 16px;">
 <div style="display: flex; align-items: center; gap: 16px;"><div class="m" style="font-size: 11px; color: #C9481A; white-space: nowrap;">{{g.title}}</div><div style="flex: 1 1 auto; height: 1px; background: rgba(42,29,74,0.2);"></div></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); grid-auto-flow: dense; gap: 14px;">
+<div class="bento" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); grid-auto-flow: dense; gap: 14px;">
 <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="5">
-<div class="tile" style="grid-column: span {{it.span}}; min-height: 190px; border-radius: 18px; padding: 24px; background: {{it.bg}}; color: {{it.fg}}; border: 1px solid {{it.bd}}; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; overflow: hidden; position: relative;">
+<div class="tile s{{it.span}}" style="grid-column: span {{it.span}}; min-height: 190px; border-radius: 18px; padding: 24px; background: {{it.bg}}; color: {{it.fg}}; border: 1px solid {{it.bd}}; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; overflow: hidden; position: relative;">
 <div class="d" style="font-weight: 800; font-size: clamp(40px, {{it.fs}}vw, 84px); line-height: 0.95; letter-spacing: -0.05em; color: {{it.num}};">{{it.v}}</div>
 <div style="display: flex; flex-direction: column; gap: 10px;">
 <div style="font-size: 15px; line-height: 1.35; opacity: 0.85;">{{it.l}}</div>
@@ -391,7 +465,7 @@ input,select,textarea{font-family:inherit}
 <div style="display: flex; flex-direction: column; gap: 18px; max-width: 860px;">
 <div class="m rv" style="font-size: 11px; color: #E85D2A;">Sınır ötesi ınfluencer · Türkiye'de alınacaklar listesi</div>
 <h2 class="d rv" style="margin: 0; font-weight: 800; font-size: clamp(38px, 5.2vw, 84px); line-height: 0.98; letter-spacing: -0.045em;">Yabancı influencer'larla satış noktasına <span class="gi">tüketici akışı.</span></h2>
-<p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #CFC6DD; max-width: 760px;">Türkiye'ye gelen milyonlarca turist, ülkesinden çıkmadan önce "Türkiye'de ne almalı?" listelerine bakıyor. Bu listeleri yazan Rusça, Arapça, Almanca ve Farsça konuşan creator'larla kurulan ekosistem, markayı eczane ve perakende rafına yabancı tüketiciyi taşıyan bir kanala dönüştürür; aynı içerikler Türk tüketicide de "yurt dışında aranan ürün" algısı yaratır. Bu modeli Türkiye'de kuran ekibi yönettim; creator seçiminden raf hazırlığına kadar işin mutfağını sahada öğrendim. Bu projeyle içeriği ölçülebilir satışa dönüştüren sistemler kurduk. Bu modeli Türkiye'de ilk kuran ekiplerden birinde görev aldım; creator seçiminden raf hazırlığına kadar işin mutfağını yaşayarak öğrenmek, planı kâğıt üzerinde değil sahada çalışır hale getiriyor.</p>
+<p class="rv" style="margin: 0; font-size: 19px; line-height: 1.6; color: #CFC6DD; max-width: 760px;">Türkiye'ye gelen milyonlarca turist, ülkesinden çıkmadan önce "Türkiye'de ne almalı?" listelerine bakıyor. Bu listeleri yazan Rusça, Arapça, Almanca ve Farsça konuşan creator'larla kurulan ekosistem, markayı eczane ve perakende rafına yabancı tüketiciyi taşıyan bir kanala dönüştürür; aynı içerikler Türk tüketicide de "yurt dışında aranan ürün" algısı yaratır. Bu modeli Türkiye'de kuran ekibi yönettim; creator seçiminden raf hazırlığına kadar işin mutfağını sahada öğrendim. Bu projeyle içeriği ölçülebilir satışa dönüştüren sistemler kurduk.</p>
 </div>
 <div class="rv" style="display: flex; flex-wrap: wrap; gap: 8px; max-width: 420px;">
 <sc-for list="{{ markets }}" as="mk" hint-placeholder-count="6">
@@ -522,7 +596,7 @@ input,select,textarea{font-family:inherit}
 </a>
 </sc-for>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
+<div class="vid-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
 <sc-for list="{{ videos }}" as="v" hint-placeholder-count="4">
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
 <video src="{{v.src}}" poster="{{v.poster}}" muted playsinline loop preload="none" controls style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; background: #2A1D4A;"></video>
@@ -582,7 +656,7 @@ input,select,textarea{font-family:inherit}
 <a href="#abone" style="color: #CFC6DD; text-decoration: none; font-size: 14px; border-bottom: 1px solid #E85D2A;">Bültene haber gelsin</a>
 </div>
 </div>
-<div class="rv" style="flex: 1 1 440px; min-width: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+<div class="rv ep-grid" style="flex: 1 1 440px; min-width: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
 <sc-for list="{{ episodes }}" as="ep" hint-placeholder-count="4">
 <div class="epc" style="aspect-ratio: 9 / 16; border-radius: 16px; background: linear-gradient(160deg, #352757, #2A1D4A); border: 1px solid #473867; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 14px; margin-top: {{ep.mt}}px;">
 <div class="m" style="font-size: 10px; color: #E85D2A;">Bölüm {{ep.no}}</div>
@@ -594,7 +668,7 @@ input,select,textarea{font-family:inherit}
 </div>
 </section>
 
-<section aria-label="Davetler" style="position: relative; min-height: 640px; overflow: hidden; background: radial-gradient(900px 520px at 72% 70%, #3A2660 0%, #2A1D4A 55%, #211743 100%);">
+<section aria-label="Davetler" class="davet" style="position: relative; min-height: 640px; overflow: hidden; background: radial-gradient(900px 520px at 72% 70%, #3A2660 0%, #2A1D4A 55%, #211743 100%);">
 <div aria-hidden="true" class="d" style="position: absolute; right: -2%; top: 6%; font-size: clamp(120px, 22vw, 320px); font-weight: 800; letter-spacing: -0.06em; line-height: 0.8; color: transparent; -webkit-text-stroke: 1px rgba(245,239,230,0.08); user-select: none; pointer-events: none;">SAHNE</div>
 <div aria-hidden="true" class="spot" style="position: absolute; right: 9%; bottom: -8%; width: 46vw; max-width: 640px; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(232,93,42,0.55) 0%, rgba(232,93,42,0.18) 42%, transparent 68%); pointer-events: none;"></div>
 <div aria-hidden="true" style="position: absolute; right: 12%; bottom: -6%; width: 40vw; max-width: 560px; aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(232,93,42,0.35); pointer-events: none;"></div>
@@ -617,7 +691,7 @@ input,select,textarea{font-family:inherit}
 <div style="max-width: 1440px; margin: 0 auto; padding: 140px 28px; display: flex; flex-wrap: wrap; gap: 40px 80px;">
 <div style="flex: 0 0 280px; display: flex; flex-direction: column; gap: 24px;">
 <div class="m rv" style="font-size: 11px; color: #C9481A; padding-top: 14px;">07 — Ön görüşme</div>
-<img class="rv" src="assets/09e1e916efbaf68eabb73a9f788d00e7.webp" alt="Aysun Bektaş" style="width: 280px; height: auto; position: sticky; top: 110px;">
+<img class="rv form-ph" src="assets/09e1e916efbaf68eabb73a9f788d00e7.webp" alt="Aysun Bektaş" style="width: 280px; height: auto; position: sticky; top: 110px;">
 </div>
 <div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 36px;">
 <h2 class="d rv" style="margin: 0; font-weight: 800; font-size: clamp(38px, 5vw, 76px); line-height: 1; letter-spacing: -0.04em;">Birlikte <span class="gi" style="color: #C9481A;">yaratalım.</span></h2>
@@ -756,6 +830,21 @@ class Component extends DCLogic {
       }, { threshold }).observe(el);
     };
     this.startCount = () => anim('cnt', 2200);
+    // Touch devices: open backstage frames automatically while the section is on screen
+    setTimeout(() => { try {
+      const touch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+      const sec = document.getElementById('kulis-dunyasi');
+      if (!touch || !sec || !('IntersectionObserver' in window)) return;
+      let t = 0, timer = null;
+      const step = () => {
+        if (this._lastTouch && Date.now() - this._lastTouch < 1500) return;
+        const w = sec.clientWidth, h = sec.clientHeight; t += 1;
+        const x = w * (0.5 + 0.30 * Math.sin(t * 0.95)), y = h * (0.52 + 0.26 * Math.sin(t * 1.37 + 1));
+        const n = this.state.n + 1;
+        this.setState({ n, last: { x, y }, trail: [...this.state.trail, { id: n, x, y }].slice(-6) });
+      };
+      new IntersectionObserver((es) => { es.forEach(x => { if (x.isIntersecting) { if (!timer) { step(); timer = setInterval(step, 750); } } else if (timer) { clearInterval(timer); timer = null; } }); }, { threshold: 0.3 }).observe(sec);
+    } catch (e) {} }, 120);
     setTimeout(() => { try { watch('rakam-seridi', 'cnt', 2200, 0.3); watch('rakamlar', 'cnt2', 1800, 0.12); watch('sosyal', 'cnt3', 2000, 0.25); } catch (e) { this.setState({ cnt: 1, cnt2: 1, cnt3: 1 }); } }, 50);
   }
   renderVals() {
@@ -780,7 +869,9 @@ class Component extends DCLogic {
     }));
     const onTrail = (e) => {
       const r = e.currentTarget.getBoundingClientRect();
-      const x = e.clientX - r.left, y = e.clientY - r.top;
+      const pt = (e.touches && e.touches[0]) ? e.touches[0] : e;
+      this._lastTouch = Date.now();
+      const x = pt.clientX - r.left, y = pt.clientY - r.top;
       const last = this.state.last;
       if (last && Math.hypot(x - last.x, y - last.y) < 110) return;
       const n = this.state.n + 1;

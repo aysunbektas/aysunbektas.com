@@ -25,7 +25,7 @@
     if (single) { var v = lookup(single[1], scopes); return v; }
     return str.replace(RE, function (_, e) { var v = lookup(e, scopes); return v == null ? '' : String(v); });
   }
-  var EVT = { onclick: 'click', onmousemove: 'mousemove', oninput: 'input', onchange: 'change', onsubmit: 'submit' };
+  var EVT = { onclick: 'click', onmousemove: 'mousemove', ontouchmove: 'touchmove', oninput: 'input', onchange: 'change', onsubmit: 'submit' };
 
   var SVGNS = 'http://www.w3.org/2000/svg';
   function render(node, scopes, out, ns) {
@@ -128,7 +128,7 @@
         }
         el = el.parentNode;
       }
-    }, type === 'mousemove' ? { passive: true } : false);
+    }, (type === 'mousemove' || type === 'touchmove') ? { passive: true } : false);
   }
 
   function boot() {
@@ -141,7 +141,8 @@
     var inner = tpl.querySelector('x-dc') || tpl;
     var comp = new Component({});
     comp._tpl = inner; comp._root = root;
-    delegate(root, 'click'); delegate(root, 'mousemove'); delegate(root, 'input'); delegate(root, 'change');
+    delegate(root, 'click'); delegate(root, 'mousemove'); delegate(root, 'touchmove'); delegate(root, 'input'); delegate(root, 'change');
+    root.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('.mnav-panel a'); if (a) { var d = a.closest('details'); if (d) d.open = false; } });
     function formKey(f) { var sj = f.querySelector('input[name="_subject"]'); return (sj ? sj.value : '') + '|' + (f.id || (f.getAttribute('style') || '').slice(0, 40)); }
     root._formKey = formKey;
     // Inline form submission (FormSubmit AJAX) — no page redirect
