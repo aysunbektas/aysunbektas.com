@@ -76,11 +76,12 @@ input,select,textarea{font-family:inherit}
 @keyframes rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
 @keyframes zoomin{from{opacity:.3;transform:scale(1.06)}to{opacity:1;transform:none}}
 @supports (animation-timeline: view()){
-.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 26%}
+.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
 .zoom{animation:zoomin linear both;animation-timeline:view();animation-range:entry 0% cover 45%}
 }
 @media (prefers-reduced-motion: reduce){.rv,.zoom{animation:none}.ph,.row,.tile{transition:none}}
 .soc{transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease}.soc:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(42,29,74,.5);background:#E85D2A!important;border-color:#E85D2A!important;color:#FFFFFF!important}
+.stepc{transition:background .3s ease,transform .3s ease}.stepc:hover{background:#352757!important;transform:translateY(-4px)}.stepc:hover .d:first-child{color:#F5EFE6}
 .infc{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease}
 .infc::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 90% -10%,rgba(232,93,42,.28),transparent 60%);opacity:0;transition:opacity .4s ease;pointer-events:none}
 .infc::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:#E85D2A;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
@@ -393,10 +394,10 @@ input,select,textarea{font-family:inherit}
 
 <div class="rv" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; align-items: stretch; border: 1px solid #473867; border-radius: 22px; overflow: hidden; background: #2A1D4A;">
 <sc-for list="{{ flow }}" as="f" hint-placeholder-count="5">
-<div style="padding: 32px 26px; border-right: 1px solid #473867; display: flex; flex-direction: column; gap: 14px; position: relative; background: {{f.bg}};">
-<div class="d" style="font-weight: 800; font-size: 48px; line-height: 1; letter-spacing: -0.05em; color: {{f.num}};">{{f.no}}</div>
-<div class="d" style="font-weight: 800; font-size: 22px; line-height: 1.05; letter-spacing: -0.02em; color: {{f.fg}};">{{f.t}}</div>
-<p style="margin: 0; font-size: 15px; line-height: 1.5; color: {{f.sub}};">{{f.d}}</p>
+<div class="stepc" style="padding: 24px 22px; border-right: 1px solid #473867; display: flex; flex-direction: column; gap: 10px; position: relative; background: {{f.bg}};">
+<div class="d" style="font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -0.05em; color: {{f.num}};">{{f.no}}</div>
+<div class="d" style="font-weight: 800; font-size: 21px; line-height: 1.05; letter-spacing: -0.02em; color: {{f.fg}};">{{f.t}}</div>
+<p style="margin: 0; font-size: 14.5px; line-height: 1.45; color: {{f.sub}};">{{f.d}}</p>
 <div aria-hidden="true" class="d" style="position: absolute; right: -14px; top: 38px; font-size: 28px; color: #E85D2A; z-index: 2;">{{f.arrow}}</div>
 </div>
 </sc-for>
@@ -404,10 +405,10 @@ input,select,textarea{font-family:inherit}
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
 <sc-for list="{{ turistWhy }}" as="w" hint-placeholder-count="3">
-<div class="tile rv" style="background: {{w.bg}}; color: {{w.fg}}; border: 1px solid {{w.bd}}; border-radius: 18px; padding: 26px 24px; display: flex; flex-direction: column; gap: 10px;">
+<div class="rv infc" style="background: {{w.bg}}; color: {{w.fg}}; border: 1px solid {{w.bd}}; border-radius: 18px; padding: 22px 22px; display: flex; flex-direction: column; gap: 8px; position: relative; overflow: hidden;">
 <div class="m" style="font-size: 11px; color: {{w.num}};">{{w.k}}</div>
 <div class="d" style="font-weight: 800; font-size: 22px; line-height: 1.1; letter-spacing: -0.02em;">{{w.t}}</div>
-<p style="margin: 0; font-size: 15px; line-height: 1.5; opacity: 0.85;">{{w.d}}</p>
+<p style="margin: 0; font-size: 14.5px; line-height: 1.45; opacity: 0.85;">{{w.d}}</p>
 </div>
 </sc-for>
 </div>
@@ -420,7 +421,7 @@ input,select,textarea{font-family:inherit}
 </section>
 
 <section aria-label="Set arkası" style="position: relative; min-height: 620px; overflow: hidden; background: #2A1D4A;">
-<img class="zoom" src="assets/23dae4c0906fd186ee39728f10b2c12e.webp" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%;">
+<img class="zoom" src="assets/23dae4c0906fd186ee39728f10b2c12e.webp" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 72%;">
 <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(42,29,74,0.25), rgba(42,29,74,0.9));"></div>
 <div style="position: relative; max-width: 1440px; margin: 0 auto; padding: 400px 28px 64px; display: flex; flex-wrap: wrap; gap: 24px 64px; justify-content: space-between; align-items: flex-end;">
 <p class="d" style="margin: 0; max-width: 760px; font-weight: 800; font-size: clamp(28px, 3.8vw, 54px); line-height: 1.02; letter-spacing: -0.035em;">Monitörün başında duran marka tarafı: brief'i yazan, senaryoyu kuran, <span class="gi">doğru yüzü</span> seçen.</p>
@@ -795,7 +796,7 @@ class Component extends DCLogic {
         ['Neden şimdi','Alışveriş turizmi büyüyor','Kur avantajı ve "Türkiye\'de ucuz, kaliteli" algısı, dermokozmetik ve takviyeyi turistin alışveriş listesine soktu. Listeyi kim yazarsa rafı o doldurur.','navy'],
         ['Neden creator','Arama değil, tavsiye','Turist ürünü Google\'da değil, kendi dilinde takip ettiği creator\'da görüyor. Kategori heroları o listelerde; markanız yanlarında durmalı.','gold'],
         ['Neden ekosistem','Tek içerik değil, sistem','Creator seçimi, liste yerleşimi, raf hazırlığı ve ölçüm birlikte kurulduğunda içerik satışa dönüşür; tek seferlik paylaşım yalnızca görüntülenme getirir.','line']
-      ].map(([k, t, d, tone]) => ({ k, t, d, ...pal[tone] })),
+      ].map(([k, t, d, tone]) => ({ k, t, d, ...(tone === 'line' ? { bg: '#352757', fg: '#F5EFE6', bd: '#4A3A62', num: '#E85D2A' } : pal[tone]) })),
       infCriteria: [
         ['Hedefe göre seçim','Satış hedefinde dönüşüm geçmişi olan, indirim koduyla ölçülebilen isimler; bilinirlikte erişimi geniş, kategoriyle bağı inandırıcı yüzler. Önce hedef, sonra liste.','navy'],
         ['Kitle, takipçi değil','Takipçi sayısı değil kitlenin kim olduğu: yaş, şehir, ilgi, satın alma gücü. Sahte takipçi ve etkileşim oranı her isimde ayrı ayrı kontrol edilir.','line'],
