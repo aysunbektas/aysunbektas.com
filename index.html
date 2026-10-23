@@ -81,6 +81,7 @@ input,select,textarea{font-family:inherit}
 }
 @media (prefers-reduced-motion: reduce){.rv,.zoom{animation:none}.ph,.row,.tile{transition:none}}
 .soc{transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease}.soc:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(42,29,74,.5);background:#E85D2A!important;border-color:#E85D2A!important;color:#FFFFFF!important}
+@keyframes hintpulse{0%{box-shadow:0 0 0 0 rgba(232,93,42,.55)}70%{box-shadow:0 0 0 16px rgba(232,93,42,0)}100%{box-shadow:0 0 0 0 rgba(232,93,42,0)}}.hint{animation:hintpulse 2.2s ease-out infinite}
 .stepc{transition:background .3s ease,transform .3s ease}.stepc:hover{background:#352757!important;transform:translateY(-4px)}.stepc:hover .d:first-child{color:#F5EFE6}
 .infc{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease,border-color .35s ease}
 .infc::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 90% -10%,rgba(232,93,42,.28),transparent 60%);opacity:0;transition:opacity .4s ease;pointer-events:none}
@@ -171,7 +172,7 @@ input,select,textarea{font-family:inherit}
 <div class="m" style="font-size: 11px; color: #E85D2A;">Kulis · set · sahne</div>
 <h2 class="d shimmer" style="margin: 0; font-weight: 800; font-size: clamp(40px, 6vw, 96px); line-height: 0.98; letter-spacing: -0.045em; color: #F5EFE6;">Fikrin sete, setin rafa taşındığı yer.</h2>
 <p style="margin: 0; max-width: 620px; font-size: 18px; color: #CFC6DD;">Brief'i yazan, senaryoyu kuran, monitörün başında doğru kareyi seçen marka tarafı. Her projenin kulisinden kareler.</p>
-<div class="m" style="font-size: 11px; color: #8E84A3; margin-top: 12px;">Fareyi gezdirin</div>
+<div class="hint m" style="display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 12px 20px; border-radius: 999px; background: #E85D2A; color: #FFFFFF; font-size: 12px; box-shadow: 0 0 0 0 rgba(232,93,42,0.6);"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l14 8-6 2-3 6z"/></svg>İmlecinizi gezdirin · kareler açılır</div>
 </div>
 </section>
 
