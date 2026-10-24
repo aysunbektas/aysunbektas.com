@@ -230,14 +230,6 @@ input,select,textarea{font-family:inherit}
 </a>
 </sc-for>
 </div>
-<div class="vid-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
-<sc-for list="{{ videos }}" as="v" hint-placeholder-count="4">
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
-<video src="{{v.src}}" poster="{{v.poster}}" muted playsinline loop preload="none" controls style="width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; background: #2A1D4A;"></video>
-<figcaption class="m" style="font-size: 10px; color: #B3A8C6;">{{v.cap}}</figcaption>
-</figure>
-</sc-for>
-</div>
 <form id="abone" action="https://formsubmit.co/hello@aysunbektas.com" method="POST" style="display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: flex-end; border-top: 1px solid #473867; padding-top: 32px;"><input type="hidden" name="_subject" value="Pazarlama Kulisi aboneliği"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://aysunbektas.com/abone-tesekkurler.html"><input type="text" name="_honey" style="display:none">
 <div style="flex: 999 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 6px;">
 <label for="kulis-mail" class="m" style="font-size: 11px; color: #E85D2A;">Pazarlama Kulisi · haftada iki sayı e-postanıza</label>
