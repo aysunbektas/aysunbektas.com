@@ -158,8 +158,8 @@
       fetch(url, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }).then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); }).then(function (j) {
         var ok = j && (j.success === true || j.success === 'true' || /success|activ|sent/i.test(String(j.message || '')));
         if (!ok) throw new Error(j && j.message || 'err');
-        var dark = /\#2A1D4A|\#211743|rgb\(42, 29, 74\)|rgb\(33, 23, 67\)/.test(getComputedStyle(f.closest('section') || f).backgroundColor + (f.closest('section') ? f.closest('section').getAttribute('style') : ''));
-        var fg = dark ? '#F5EFE6' : '#2A1D4A', sub = dark ? '#CFC6DD' : '#4A3A62';
+        var dark = /\#4B1B35|\#43152E|rgb\(42, 29, 74\)|rgb\(33, 23, 67\)/.test(getComputedStyle(f.closest('section') || f).backgroundColor + (f.closest('section') ? f.closest('section').getAttribute('style') : ''));
+        var fg = dark ? '#F5EFE6' : '#4B1B35', sub = dark ? '#DDC5D2' : '#62384F';
         var msg = isSub ? '<div style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.03em;color:' + fg + '">Kulise hoş geldiniz <span style="color:#E85D2A">✓</span></div><div style="font-size:15px;line-height:1.5;color:' + sub + '">Aboneliğiniz alındı. Yeni sayılar e-postanıza gelecek; her e-postada tek tıkla çıkış var.</div>'
                         : '<div style="font-family:\'Bricolage Grotesque\',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.03em;color:' + fg + '">Talebiniz ulaştı <span style="color:#E85D2A">✓</span></div><div style="font-size:15px;line-height:1.5;color:' + sub + '">Teşekkürler. En kısa sürede aysun@aysunbektas.com adresinden dönüş yapılacak.</div>';
         var box = document.createElement('div'); box.setAttribute('role', 'status'); box.style.cssText = 'display:flex;flex-direction:column;gap:10px;padding:22px 24px;border:1px solid #E85D2A;border-radius:14px;background:rgba(232,93,42,.08);max-width:560px;animation:rise .5s ease both';
